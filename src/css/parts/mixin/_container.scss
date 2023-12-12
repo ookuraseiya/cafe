@@ -1,0 +1,9 @@
+// containerのcss
+
+@mixin container {
+  margin: 0 8%;
+}
+
+@mixin container-inner {
+  margin: 0 6%;
+}

@@ -1,0 +1,10 @@
+// eventのcss
+
+.event {
+  @include container();
+  background-color: #fff;
+}
+
+.fc-toolbar-title {
+  @include font32();
+}

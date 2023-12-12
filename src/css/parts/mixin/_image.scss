@@ -1,0 +1,6 @@
+// imageのcss
+
+@mixin image() {
+  object-fit: cover;
+  background-size: cover;
+}

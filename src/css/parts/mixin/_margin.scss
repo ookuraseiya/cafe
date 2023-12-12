@@ -1,0 +1,30 @@
+// marginのcss
+
+@mixin margin {
+  margin: 5% 0;
+}
+
+@mixin margin-top {
+  margin-top: 5%;
+}
+
+@mixin margin-bottom {
+  margin-bottom: 5%;
+}
+
+/////////////////////////////////////////////////////////////////////////////////
+
+//margin-bottom (pc
+@mixin margin-bottom {
+  margin-bottom: 5%;
+}
+
+//margin-bottom (ipad
+@mixin margin-bottom {
+  margin-bottom: 5%;
+}
+
+//margin-bottom (iPhone
+@mixin margin-bottom {
+  margin-bottom: 5%;
+}

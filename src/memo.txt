@@ -1,0 +1,87 @@
+scss のコマンドコンパイル実行
+
+1. npm run sass → localhost:3001 で立ち上げ。→ いらんかも
+
+「参考になった記事書く。」
+画像命名規則（https://big-mac.jp/column/i-will-not-hesitate-anymore-id-class-name-image-file-name-assignment-summary/）
+https://cdn.pixabay.com/photo/2019/11/16/16/38/birthday-4630579_960_720.jpg
+https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8ixlib=rb-1.2.1auto=formatfit=cropw=750q=80
+アクセス、イベントページの画像重たいかも？
+
+SCSSレスポンシブ（https://zenn.dev/tak_dcxi/articles/2cc1828e9c1fe2）
+ハンバーガーメニュー（https://rui-log.com/css-hamburger-menu/）
+
+「やる事リスト（上から順に）」
+・画像命名変更（images フォルダの整理）終わり
+・css 設計修正 終わり？
+・クラス名整理 おわり？
+・レスポンシブ対応 おわった？
+・共通化（mainの部分をコンポーネント化して画像をチルドレンで渡す。など）
+・News.jsx の API 連携整理（どんな投稿しても表示されるようにする。※open_hpを参考に）
+・機能追加の検討（ログイン機能、ショッピング機能？など）
+・etc....
+
+
+###########################################################
+#### ReactでFullCalendarに祝日のAPIを取得して表示させたい ####
+###########################################################
+
+ReactでFullCalendarに祝日のAPIを取得して表示させる方法は以下の通りです：
+
+1. **Googleカレンダーから祝日を取得する**⁴：
+    ```javascript
+    import FullCalendar from '@fullcalendar/react';
+    import dayGridPlugin from '@fullcalendar/daygrid';
+    import googleCalendarPlugin from '@fullcalendar/google-calendar';
+
+    function MyApp() {
+      return (
+        <FullCalendar
+          plugins={[ dayGridPlugin, googleCalendarPlugin ]}
+          initialView="dayGridMonth"
+          googleCalendarApiKey='あなたのAPIキー'
+          events={{googleCalendarId: 'japanese__ja@holiday.calendar.google.com'}}
+        />
+      );
+    }
+    ```
+2. **自分で作成した祝日APIから取得する**¹：
+    ```javascript
+    import FullCalendar from '@fullcalendar/react';
+    import dayGridPlugin from '@fullcalendar/daygrid';
+
+    function MyApp() {
+      return (
+        <FullCalendar
+          plugins={[ dayGridPlugin ]}
+          initialView="dayGridMonth"
+          events='/path/to/your/holiday/api'
+        />
+      );
+    }
+    ```
+上記のコードは、Googleカレンダーから祝日を取得する例と、自分で作成した祝日APIから取得する例です。どちらの方法も`events`プロパティにAPIのURLを指定することで、祝日情報を取得してカレンダーに表示します。
+
+なお、Googleカレンダーから祝日を取得する場合は、Google API ConsoleからAPIキーを取得する必要があります⁴。また、自分で祝日APIを作成する場合は、そのAPIがFullCalendarが要求するイベントオブジェクトの形式でデータを返すように設計する必要があります¹。
+
+具体的な実装方法や設定については、公式ドキュメントや関連するチュートリアルをご覧ください。¹⁴.
+
+ソース: Bing との会話 2023/12/6
+https://kazunori-toybox.com/blog/jquery/fullcalendar2/
+(1) 【初心者向け】JavaScriptで祝日対応のカレンダー作成 .... https://nyanblog2222.com/programming/javascript/2835/.
+(2) FullCalendarでテキストとして休日（などの情報）を表示する - Qiita. https://qiita.com/koike_moyashi/items/b88a7c76ed37a4fec0ee.
+(3) pluginから理解するFullCalendar with React #React - Qiita. https://qiita.com/mball/items/f2fa679834ec74ec1e5f.
+(4) FullCalendar で日本の祝日を表示する - エンジニアきまぐれTips. https://okinaka.hatenablog.com/entry/20110416/1302942541.
+(5) undefined. https://fullcalendar.io/docs/google-calendar.
+(6) undefined. https://fullcalendar.io/docs/eventRender.
+(7) undefined. https://fullcalendar.io/docs/react.
+(8) undefined. https://fullcalendar.io/docs/vue.
+(9) undefined. https://fullcalendar.io/docs/angular.
+(10) undefined. https://fullcalendar.io/api/demo-feeds/events.json.
+(11) undefined. http://www.google.com/your_feed_url/.
+(12) ja.wikipedia.org. https://ja.wikipedia.org/wiki/React.
+
+
+https://stackoverflow.com/questions/71984456/react-app-images-not-downloading-after-npm-build
+reactのプロジェクトを作り直して１から行いなおす。
+問題点：画像が反映されない＆画像がビルドできない。

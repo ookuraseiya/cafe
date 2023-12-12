@@ -1,0 +1,72 @@
+// menuのcss
+
+.menu {
+  &__body {
+    border: 1px solid #a48c61;
+    @include padding();
+  }
+  &__heading {
+    @include font32();
+    @include padding-bottom();
+    @include container-inner();
+    text-align: center;
+    @include responsive(lg) {
+      @include font22();
+    }
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px dashed #a48c61;
+    @include padding();
+    @include container-inner();
+    @include responsive(sm) {
+      display: block;
+    }
+  }
+  &__text {
+    width: 40%;
+    @include responsive(sm) {
+      width: 100%;
+    }
+  }
+  &__title {
+    @include font18();
+    @include responsive(lg) {
+      @include font14();
+    }
+    &--sub {
+      @include font32();
+      @include main-color();
+      margin-bottom: 10%;
+      @include responsive(lg) {
+        @include font22();
+        margin-bottom: 5%;
+      }
+    }
+  }
+  &__lead {
+    @include margin-bottom();
+    @include font16();
+    @include responsive(lg) {
+      @include font12();
+    }
+    &--sub {
+      margin-top: 10%;
+      @include font30();
+      @include responsive(lg) {
+        @include font22();
+      }
+    }
+  }
+  &__image {
+    width: 45%;
+    @include responsive(sm) {
+      width: 80%;
+      margin: 10% auto;
+    }
+  }
+}
+
+/////////////////////////////////////////////////////////////////////////////////

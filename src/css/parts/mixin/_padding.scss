@@ -1,0 +1,15 @@
+// paddingのcss
+
+@mixin padding {
+  padding: 5% 0;
+}
+
+@mixin padding-top {
+  padding-top: 5%;
+}
+
+@mixin padding-bottom {
+  padding-bottom: 5%;
+}
+
+/////////////////////////////////////////////////////////////////////////////////

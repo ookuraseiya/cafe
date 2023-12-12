@@ -1,0 +1,102 @@
+/*newsの詳細ページ*/
+
+.newsDetail {
+  width: 70%;
+  position: relative;
+  @include responsive(sm) {
+    width: 100%;
+  }
+  &__title {
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+    color: #a48c61;
+    @include font40();
+    margin: 0;
+    &--sub {
+      width: 100%;
+      text-align: center;
+      @include margin-bottom();
+      @include font16();
+    }
+  }
+  &__item {
+    border-bottom: 2px solid #e8e8e8;
+    width: 100%;
+    position: relative;
+    display: block;
+    &--image {
+      height: 400px;
+      width: 100%;
+      margin-bottom: 4%;
+      @include responsive(sm) {
+        height: auto;
+      }
+      &--2 {
+        height: auto;
+        width: 48%;
+        margin-bottom: 4%;
+        @include responsive(sm) {
+          width: 100%;
+          // display: none;
+        }
+      }
+      &--3 {
+        height: auto;
+        width: 40%;
+        margin-bottom: 4%;
+        @include responsive(sm) {
+          width: 100%;
+        }
+      }
+    }
+    &--time {
+      color: #000;
+      @include font20();
+      padding-bottom: 1%;
+      margin-bottom: 4%;
+    }
+    &--header {
+      color: #a48c61;
+      @include font36();
+      @include responsive(sm) {
+        @include font24();
+      }
+      &--2 {
+        border-left: 6px solid #aa8d3e;
+        border-bottom: 1px solid #aa8d3e;
+        padding: 0.5rem 0.75rem;
+        color: #aa8d3f;
+        font-weight: bold;
+        line-height: 1;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        @include font24();
+        @include responsive(sm) {
+          @include font20();
+        }
+      }
+    }
+    &--text {
+      margin-top: 1%;
+      padding-bottom: 4%;
+      @include font14();
+      &--2 {
+        padding-bottom: 4%;
+        width: 55%;
+        @include font14();
+        @include responsive(sm) {
+          width: 100%;
+        }
+      }
+    }
+    &--flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include responsive(sm) {
+        display: block;
+      }
+    }
+  }
+}

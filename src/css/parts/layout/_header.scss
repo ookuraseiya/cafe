@@ -1,0 +1,35 @@
+@import "../mixin/responsive";
+
+.header {
+  &__nav {
+    margin: 2% 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include responsive(xl) {
+      margin: 4% 0;
+      @include responsive(sm) {
+        margin: 6% 0;
+      }
+    }
+    &--logo {
+      width: 8%;
+      @include responsive(xl) {
+        width: 14%;
+        @include responsive(sm) {
+          width: 18%;
+        }
+      }
+    }
+    &--list {
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+      @include responsive(xl) {
+        display: none;
+      }
+    }
+  }
+  &-item {
+  }
+}

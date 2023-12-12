@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  max-width: 100%;
+  height: 100%;
+  text-rendering: optimizeSpeed;
+  font-size: 62.5%;
+  line-height: 1.5;
+  // font-family: "Gill Sans Nova", "noto-sans-cjk-jp";
+  font-family: "游明朝", YuMincho, "Hiragino Mincho ProN", "Hiragino Mincho Pro", "ＭＳ 明朝", serif;
+  background-image: url(https://stellacasting.jp/wp-content/themes/SC_corp/assets/img/dots.png);
+}
+
+.container {
+  margin: 0 8%;
+}
+
+.row__reverse {
+  flex-direction: row-reverse;
+}
