@@ -14,6 +14,8 @@ export const ItemConcept = () => {
                     className="main__slider--img"
                     src="/images/concept/concept_image01.webp"
                     alt=""
+                    height=""
+                    width=""
                   />
                 </li>
                 <li className="main__slider--item">
@@ -21,6 +23,8 @@ export const ItemConcept = () => {
                     className="main__slider--img"
                     src="/images/concept/concept_image02.webp"
                     alt=""
+                    height=""
+                    width=""
                   />
                 </li>
                 <li className="main__slider--item">
@@ -28,6 +32,8 @@ export const ItemConcept = () => {
                     className="main__slider--img"
                     src="/images/concept/concept_image03.webp"
                     alt=""
+                    height=""
+                    width=""
                   />
                 </li>
               </ul>
@@ -58,6 +64,8 @@ export const ItemConcept = () => {
                 className="concept__image"
                 src="/images/concept/concept_image04.webp"
                 alt=""
+                height=""
+                width=""
                 loading="lazy"
               />
             </div>
@@ -80,6 +88,8 @@ export const ItemConcept = () => {
                 className="concept__image"
                 src="/images/concept/concept_image05.webp"
                 alt=""
+                height=""
+                width=""
                 loading="lazy"
               />
             </div>
@@ -104,6 +114,8 @@ export const ItemConcept = () => {
                 className="concept__image"
                 src="/images/concept/concept_image06.webp"
                 alt=""
+                height=""
+                width=""
                 loading="lazy"
               />
             </div>
@@ -126,6 +138,8 @@ export const ItemConcept = () => {
                 className="concept__image"
                 src="/images/concept/concept_image07.webp"
                 alt=""
+                height=""
+                width=""
                 loading="lazy"
               />
             </div>
@@ -138,6 +152,8 @@ export const ItemConcept = () => {
                     className="staff__image"
                     src="/images/concept/staff/staff_image01.webp"
                     alt=""
+                    height=""
+                    width=""
                     loading="lazy"
                   />
                   <h1 className="staff__title">
@@ -156,6 +172,8 @@ export const ItemConcept = () => {
                     className="staff__image"
                     src="/images/concept/staff/staff_image02.webp"
                     alt=""
+                    height=""
+                    width=""
                     loading="lazy"
                   />
                   <h1 className="staff__title">
@@ -174,6 +192,8 @@ export const ItemConcept = () => {
                     className="staff__image"
                     src="/images/concept/staff/staff_image03.webp"
                     alt=""
+                    height=""
+                    width=""
                     loading="lazy"
                   />
                   <h1 className="staff__title">
@@ -220,6 +240,8 @@ export const ItemConcept = () => {
                   className="intro__image"
                   src="/images/concept/staff/staff_image04.webp"
                   alt=""
+                  height=""
+                  width=""
                   loading="lazy"
                 />
               </div>

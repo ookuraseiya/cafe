@@ -50,6 +50,8 @@ export const ItemContact = () => {
                     className="main__slider--img"
                     src="/images/contact/contact_image01.webp"
                     alt=""
+                    height=""
+                    width=""
                   />
                 </li>
                 <li className="main__slider--item">
@@ -57,6 +59,8 @@ export const ItemContact = () => {
                     className="main__slider--img"
                     src="/images/contact/contact_image02.webp"
                     alt=""
+                    height=""
+                    width=""
                   />
                 </li>
                 <li className="main__slider--item">
@@ -64,6 +68,8 @@ export const ItemContact = () => {
                     className="main__slider--img"
                     src="/images/contact/contact_image03.webp"
                     alt=""
+                    height=""
+                    width=""
                   />
                 </li>
               </ul>

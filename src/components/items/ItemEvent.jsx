@@ -33,6 +33,8 @@ export const ItemEvent = () => {
                     className="main__slider--img"
                     src="/images/event/event_image01.webp"
                     alt=""
+                    height=""
+                    width=""
                   />
                 </li>
                 <li className="main__slider--item">
@@ -40,6 +42,8 @@ export const ItemEvent = () => {
                     className="main__slider--img"
                     src="/images/event/event_image02.webp"
                     alt=""
+                    height=""
+                    width=""
                   />
                 </li>
                 <li className="main__slider--item">
@@ -47,6 +51,8 @@ export const ItemEvent = () => {
                     className="main__slider--img"
                     src="/images/event/event_image03.webp"
                     alt=""
+                    height=""
+                    width=""
                   />
                 </li>
               </ul>

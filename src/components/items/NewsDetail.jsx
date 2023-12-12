@@ -37,6 +37,8 @@ export const NewsDetail = () => {
                       className="main__slider--img"
                       src="/images/news/news_image01.webp"
                       alt=""
+                      height=""
+                      width=""
                     />
                   </li>
                   <li className="main__slider--item">
@@ -44,6 +46,8 @@ export const NewsDetail = () => {
                       className="main__slider--img"
                       src="/images/news/news_image02.webp"
                       alt=""
+                      height=""
+                      width=""
                     />
                   </li>
                   <li className="main__slider--item">
@@ -51,6 +55,8 @@ export const NewsDetail = () => {
                       className="main__slider--img"
                       src="/images/news/news_image03.webp"
                       alt=""
+                      height=""
+                      width=""
                     />
                   </li>
                 </ul>
@@ -68,6 +74,8 @@ export const NewsDetail = () => {
                 className="newsDetail__item--image"
                 src={post.image.url}
                 alt=""
+                height=""
+                width=""
                 loading="lazy"
               />
               <h1 className="newsDetail__item--header">{post.title}</h1>
@@ -84,12 +92,16 @@ export const NewsDetail = () => {
                   className="newsDetail__item--image--2"
                   src={post.image2.url}
                   alt=""
+                  height=""
+                  width=""
                   loading="lazy"
                 />
                 <img
                   className="newsDetail__item--image--2"
                   src={post.image2_2.url}
                   alt=""
+                  height=""
+                  width=""
                   loading="lazy"
                 />
               </div>
@@ -100,6 +112,8 @@ export const NewsDetail = () => {
                   className="newsDetail__item--image--3"
                   src={post.image3.url}
                   alt=""
+                  height=""
+                  width=""
                   loading="lazy"
                 />
               </div>
@@ -110,12 +124,16 @@ export const NewsDetail = () => {
                   className="newsDetail__item--image--2"
                   src={post.image4.url}
                   alt=""
+                  height=""
+                  width=""
                   loading="lazy"
                 />
                 <img
                   className="newsDetail__item--image--2"
                   src={post.image4_2.url}
                   alt=""
+                  height=""
+                  width=""
                   loading="lazy"
                 />
               </div>
@@ -139,6 +157,8 @@ export const NewsDetail = () => {
                       className="main__slider--img"
                       src="https://vico-co.jp/dist/img/main/l-hero__image01.webp?v=20200908170427"
                       alt=""
+                      height=""
+                      width=""
                       loading="lazy"
                     />
                   </li>
@@ -147,6 +167,8 @@ export const NewsDetail = () => {
                       className="main__slider--img"
                       src="https://vico-co.jp/dist/img/main/l-hero__image02.webp?v=20200908170427"
                       alt=""
+                      height=""
+                      width=""
                       loading="lazy"
                     />
                   </li>
@@ -155,6 +177,8 @@ export const NewsDetail = () => {
                       className="main__slider--img"
                       src="https://vico-co.jp/dist/img/main/l-hero__image03.webp?v=20200908170427"
                       alt=""
+                      height=""
+                      width=""
                       loading="lazy"
                     />
                   </li>

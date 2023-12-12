@@ -16,6 +16,8 @@ export class ItemAccess extends React.Component {
                       className="main__slider--img"
                       src="/images/access/access_image01.webp"
                       alt=""
+                      height=""
+                      width=""
                     />
                   </li>
                   <li className="main__slider--item">
@@ -23,6 +25,8 @@ export class ItemAccess extends React.Component {
                       className="main__slider--img"
                       src="/images/access/access_image02.webp"
                       alt=""
+                      height=""
+                      width=""
                     />
                   </li>
                   <li className="main__slider--item">
@@ -30,6 +34,8 @@ export class ItemAccess extends React.Component {
                       className="main__slider--img"
                       src="/images/access/access_image03.webp"
                       alt=""
+                      height=""
+                      width=""
                     />
                   </li>
                 </ul>
@@ -48,6 +54,8 @@ export class ItemAccess extends React.Component {
                 className="access__img"
                 src="/images/access/access_image04.webp"
                 alt=""
+                height=""
+                width=""
                 loading="lazy"
               />
               <div className="access__card">

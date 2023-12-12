@@ -14,6 +14,8 @@ export const ItemMenu = () => {
                     className="main__slider--img"
                     src="/images/menu/menu_image01.webp"
                     alt=""
+                    height=""
+                    width=""
                   />
                 </li>
                 <li className="main__slider--item">
@@ -21,6 +23,8 @@ export const ItemMenu = () => {
                     className="main__slider--img"
                     src="/images/menu/menu_image02.webp"
                     alt=""
+                    height=""
+                    width=""
                   />
                 </li>
                 <li className="main__slider--item">
@@ -28,6 +32,8 @@ export const ItemMenu = () => {
                     className="main__slider--img"
                     src="/images/menu/menu_image03.webp"
                     alt=""
+                    height=""
+                    width=""
                   />
                 </li>
               </ul>
@@ -65,6 +71,8 @@ export const ItemMenu = () => {
                 className="menu__image"
                 src="/images/menu/menu_image04.webp"
                 alt=""
+                height=""
+                width=""
                 loading="lazy"
               />
             </div>
@@ -106,6 +114,8 @@ export const ItemMenu = () => {
                 className="menu__image"
                 src="/images/menu/menu_image05.webp"
                 alt=""
+                height=""
+                width=""
                 loading="lazy"
               />
             </div>
@@ -141,6 +151,8 @@ export const ItemMenu = () => {
                 className="menu__image"
                 src="/images/menu/menu_image06.webp"
                 alt=""
+                height=""
+                width=""
                 loading="lazy"
               />
             </div>
@@ -163,6 +175,8 @@ export const ItemMenu = () => {
                 className="menu__image"
                 src="/images/menu/menu_image07.webp"
                 alt=""
+                height=""
+                width=""
                 loading="lazy"
               />
             </div>
@@ -189,6 +203,8 @@ export const ItemMenu = () => {
                 className="menu__image"
                 src="/images/menu/menu_image08.webp"
                 alt=""
+                height=""
+                width=""
                 loading="lazy"
               />
             </div>

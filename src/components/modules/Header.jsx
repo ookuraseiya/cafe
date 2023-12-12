@@ -10,6 +10,8 @@ export const Header = () => {
           className="header__nav--logo"
           src="/images/icon/cafe_logo.webp"
           alt=""
+          height=""
+          width=""
         />
         <ul className="header__nav--list">
           <li>
