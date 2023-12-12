@@ -15,6 +15,7 @@ export const HamburgerMenu = () => {
       <button
         className={isOpen ? 'hamburgerMenu__close' : 'hamburgerMenu__open'}
         onClick={toggleMenu}
+        aria-label="メニューを開く"
       >
         <GiHamburgerMenu size={43} />
       </button>
