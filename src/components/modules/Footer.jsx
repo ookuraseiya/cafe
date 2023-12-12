@@ -8,33 +8,51 @@ export const Footer = () => {
         <div className="footer__left">
           <div className="footer__nav">
             <ul className="footer__nav--list">
-              <Link to="/" className="footer__nav--item font__hover">
-                TOP
-              </Link>
-              <Link
-                to="/items/concept"
-                className="footer__nav--item font__hover"
-              >
-                CONCEPT
-              </Link>
-              <Link to="/items/menu" className="footer__nav--item font__hover">
-                MENU
-              </Link>
-              <Link to="/items/event" className="footer__nav--item font__hover">
-                EVENT
-              </Link>
-              <Link
-                to="/items/access"
-                className="footer__nav--item font__hover"
-              >
-                ACCESE
-              </Link>
-              <Link
-                to="/items/contact"
-                className="footer__nav--item font__hover"
-              >
-                CONTACT
-              </Link>
+              <li>
+                <Link to="/" className="footer__nav--item font__hover">
+                  TOP
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/items/concept"
+                  className="footer__nav--item font__hover"
+                >
+                  CONCEPT
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/items/menu"
+                  className="footer__nav--item font__hover"
+                >
+                  MENU
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/items/event"
+                  className="footer__nav--item font__hover"
+                >
+                  EVENT
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/items/access"
+                  className="footer__nav--item font__hover"
+                >
+                  ACCESE
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/items/contact"
+                  className="footer__nav--item font__hover"
+                >
+                  CONTACT
+                </Link>
+              </li>
             </ul>
           </div>
           <p className="footer__info">

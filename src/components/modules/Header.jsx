@@ -12,24 +12,36 @@ export const Header = () => {
           alt=""
         />
         <ul className="header__nav--list">
-          <Link to="/" className="header__nav--item font__hover">
-            TOP
-          </Link>
-          <Link to="/items/concept" className="header__nav--item font__hover">
-            CONCEPT
-          </Link>
-          <Link to="/items/menu" className="header__nav--item font__hover">
-            MENU
-          </Link>
-          <Link to="/items/event" className="header__nav--item font__hover">
-            EVENT
-          </Link>
-          <Link to="/items/access" className="header__nav--item font__hover">
-            ACCESE
-          </Link>
-          <Link to="/items/contact" className="header__nav--item font__hover">
-            CONTACT
-          </Link>
+          <li>
+            <Link to="/" className="header__nav--item font__hover">
+              TOP
+            </Link>
+          </li>
+          <li>
+            <Link to="/items/concept" className="header__nav--item font__hover">
+              CONCEPT
+            </Link>
+          </li>
+          <li>
+            <Link to="/items/menu" className="header__nav--item font__hover">
+              MENU
+            </Link>
+          </li>
+          <li>
+            <Link to="/items/event" className="header__nav--item font__hover">
+              EVENT
+            </Link>
+          </li>
+          <li>
+            <Link to="/items/access" className="header__nav--item font__hover">
+              ACCESE
+            </Link>
+          </li>
+          <li>
+            <Link to="/items/contact" className="header__nav--item font__hover">
+              CONTACT
+            </Link>
+          </li>
         </ul>
         <HamburgerMenu />
       </div>
