@@ -1,7 +1,5 @@
 import './css/styles.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Header } from './components/modules/Header';
-import { Footer } from './components/modules/Footer';
 import { Main } from './components/items/Main';
 import { ItemConcept } from './components/items/ItemConcept';
 import { ItemMenu } from './components/items/ItemMenu';
@@ -16,7 +14,6 @@ export const App = () => {
     <>
       <BrowserRouter>
         <ScrollToTop />
-        <Header />
         <Routes>
           <Route exact path="/" element={<Main />} />
           <Route exact path="/items/concept" element={<ItemConcept />} />
@@ -26,7 +23,6 @@ export const App = () => {
           <Route exact path="/items/contact" element={<ItemContact />} />
           <Route exact path="/items/news/:id" element={<NewsDetail />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </>
   );

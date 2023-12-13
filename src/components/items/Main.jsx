@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { News } from '../../blog/News';
+import { Header } from '../modules/Header';
+import { Footer } from '../modules/Footer';
 
 export const Main = () => {
   return (
     <>
+    <Header />
       <section className="main">
         <div className="container">
           <div className="main__flex">
@@ -195,6 +198,7 @@ export const Main = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

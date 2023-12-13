@@ -99,4 +99,22 @@
       }
     }
   }
+
+  &__error {
+    margin: 10% 0;
+    &--title {
+      width: 100%;
+      text-align: center;
+      margin-top: 5%;
+      color: #a48c61;
+      @include font40();
+      margin: 0;
+    }
+    &--text {
+      width: 100%;
+      text-align: center;
+      @include margin-bottom();
+      @include font16();
+    }
+  }
 }

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { SideBar } from './SideBar';
+import { Header } from '../modules/Header';
+import { Footer } from '../modules/Footer';
 import Moment from 'react-moment';
 
 export const NewsDetail = () => {
@@ -26,6 +28,7 @@ export const NewsDetail = () => {
   try {
     return (
       <>
+        <Header />
         <section className="main">
           <div className="container">
             <div className="main__flex">
@@ -83,69 +86,102 @@ export const NewsDetail = () => {
                 {post.time}
               </Moment>
               <h1 className="newsDetail__item--text">{post.text}</h1>
-              <h1 className="newsDetail__item--text">{post.textx}</h1>
-              {/* <h1 className="newsDetail__item--text">{String(post.image.url)}</h1> */}
-              <h1 className="newsDetail__item--header--2">{post.title2}</h1>
-              <h1 className="newsDetail__item--text">{post.text2}</h1>
+
+              {post.title2 && post.title2 ? (
+                <h1 className="newsDetail__item--header--2">{post.title2}</h1>
+              ) : null}
+
+              {post.text2 && post.text2 ? (
+                <h1 className="newsDetail__item--text">{post.text2}</h1>
+              ) : null}
+
               <div className="newsDetail__item--flex">
-                <img
-                  className="newsDetail__item--image--2"
-                  src={post.image2.url}
-                  alt=""
-                  height=""
-                  width=""
-                  loading="lazy"
-                />
-                <img
-                  className="newsDetail__item--image--2"
-                  src={post.image2_2.url}
-                  alt=""
-                  height=""
-                  width=""
-                  loading="lazy"
-                />
+                {post.image2 && post.image2.url ? (
+                  <img
+                    className="newsDetail__item--image--2"
+                    src={post.image2.url}
+                    alt=""
+                    height=""
+                    width=""
+                    loading="lazy"
+                  />
+                ) : null}
+
+                {post.image2_2 && post.image2_2.url ? (
+                  <img
+                    className="newsDetail__item--image--2"
+                    src={post.image2_2.url}
+                    alt=""
+                    height=""
+                    width=""
+                    loading="lazy"
+                  />
+                ) : null}
               </div>
-              <h1 className="newsDetail__item--header--2">{post.title3}</h1>
+
+              {post.title3 && post.title3 ? (
+                <h1 className="newsDetail__item--header--2">{post.title3}</h1>
+              ) : null}
+
               <div className="newsDetail__item--flex">
-                <h1 className="newsDetail__item--text--2">{post.text3}</h1>
-                <img
-                  className="newsDetail__item--image--3"
-                  src={post.image3.url}
-                  alt=""
-                  height=""
-                  width=""
-                  loading="lazy"
-                />
+                {post.text3 && post.text3 ? (
+                  <h1 className="newsDetail__item--text--2">{post.text3}</h1>
+                ) : null}
+
+                {post.image3 && post.image3.url ? (
+                  <img
+                    className="newsDetail__item--image--3"
+                    src={post.image3.url}
+                    alt=""
+                    height=""
+                    width=""
+                    loading="lazy"
+                  />
+                ) : null}
               </div>
-              <h1 className="newsDetail__item--header--2">{post.title4}</h1>
-              <h1 className="newsDetail__item--text">{post.text4}</h1>
+
+              {post.title4 && post.title4 ? (
+                <h1 className="newsDetail__item--header--2">{post.title4}</h1>
+              ) : null}
+
+              {post.text4 && post.text4 ? (
+                <h1 className="newsDetail__item--text">{post.text4}</h1>
+              ) : null}
+
               <div className="newsDetail__item--flex">
-                <img
-                  className="newsDetail__item--image--2"
-                  src={post.image4.url}
-                  alt=""
-                  height=""
-                  width=""
-                  loading="lazy"
-                />
-                <img
-                  className="newsDetail__item--image--2"
-                  src={post.image4_2.url}
-                  alt=""
-                  height=""
-                  width=""
-                  loading="lazy"
-                />
+                {post.image4 && post.image4.url ? (
+                  <img
+                    className="newsDetail__item--image--2"
+                    src={post.image4.url}
+                    alt=""
+                    height=""
+                    width=""
+                    loading="lazy"
+                  />
+                ) : null}
+
+                {post.image4_2 && post.image4_2.url ? (
+                  <img
+                    className="newsDetail__item--image--2"
+                    src={post.image4_2.url}
+                    alt=""
+                    height=""
+                    width=""
+                    loading="lazy"
+                  />
+                ) : null}
               </div>
             </div>
           </section>
           <SideBar />
         </section>
+        <Footer />
       </>
     );
   } catch (e) {
     return (
       <>
+        <Header />
         <section className="main">
           <div className="container">
             <div className="main__flex">
@@ -155,31 +191,28 @@ export const NewsDetail = () => {
                   <li className="main__slider--item">
                     <img
                       className="main__slider--img"
-                      src="https://vico-co.jp/dist/img/main/l-hero__image01.webp?v=20200908170427"
+                      src="/images/news/news_image01.webp"
                       alt=""
                       height=""
                       width=""
-                      loading="lazy"
                     />
                   </li>
                   <li className="main__slider--item">
                     <img
                       className="main__slider--img"
-                      src="https://vico-co.jp/dist/img/main/l-hero__image02.webp?v=20200908170427"
+                      src="/images/news/news_image02.webp"
                       alt=""
                       height=""
                       width=""
-                      loading="lazy"
                     />
                   </li>
                   <li className="main__slider--item">
                     <img
                       className="main__slider--img"
-                      src="https://vico-co.jp/dist/img/main/l-hero__image03.webp?v=20200908170427"
+                      src="/images/news/news_image03.webp"
                       alt=""
                       height=""
                       width=""
-                      loading="lazy"
                     />
                   </li>
                 </ul>
@@ -187,7 +220,13 @@ export const NewsDetail = () => {
             </div>
           </div>
         </section>
-        <p>投稿がありません。</p>
+        <div className="newsDetail__error">
+          <h1 className="newsDetail__error--title">投稿がありません。</h1>
+          <p className="newsDetail__error--text">
+            大変申し訳ありませんが、投稿がありません。
+          </p>
+        </div>
+        <Footer />
       </>
     );
   }

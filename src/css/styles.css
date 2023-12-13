@@ -1706,6 +1706,23 @@ template {
     display: block;
   }
 }
+.newsDetail__error {
+  margin: 10% 0;
+}
+.newsDetail__error--title {
+  width: 100%;
+  text-align: center;
+  margin-top: 5%;
+  color: #a48c61;
+  font-size: 4em;
+  margin: 0;
+}
+.newsDetail__error--text {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5%;
+  font-size: 1.6em;
+}
 
 /*contactの詳細ページ*/
 .contact {

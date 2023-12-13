@@ -1,5 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
+import { Header } from '../modules/Header';
+import { Footer } from '../modules/Footer';
 
 const initialValues = {
   name: '',
@@ -39,6 +41,7 @@ export const ItemContact = () => {
   });
   return (
     <>
+      <Header />
       <section className="main">
         <div className="container">
           <div className="main__flex">
@@ -145,6 +148,7 @@ export const ItemContact = () => {
           </button>
         </form>
       </section>
+      <Footer />
     </>
   );
 };

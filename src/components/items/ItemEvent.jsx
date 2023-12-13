@@ -3,6 +3,8 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import { Header } from '../modules/Header';
+import { Footer } from '../modules/Footer';
 
 export const ItemEvent = () => {
   const [events, setEvents] = useState([]);
@@ -22,6 +24,7 @@ export const ItemEvent = () => {
 
   return (
     <>
+      <Header />
       <section className="main">
         <div className="container">
           <div className="main__flex">
@@ -91,6 +94,7 @@ export const ItemEvent = () => {
           />
         </div>
       </section>
+      <Footer />
     </>
   );
 };

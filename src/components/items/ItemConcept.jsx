@@ -1,8 +1,11 @@
 import React from 'react';
+import { Header } from '../modules/Header';
+import { Footer } from '../modules/Footer';
 
 export const ItemConcept = () => {
   return (
     <>
+      <Header />
       <section className="main">
         <div className="container">
           <div className="main__flex">
@@ -249,6 +252,7 @@ export const ItemConcept = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

@@ -1,8 +1,11 @@
 import React from 'react';
+import { Header } from '../modules/Header';
+import { Footer } from '../modules/Footer';
 
 export const ItemMenu = () => {
   return (
     <>
+      <Header />
       <section className="main">
         <div className="container">
           <div className="main__flex">
@@ -211,6 +214,7 @@ export const ItemMenu = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };
