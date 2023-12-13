@@ -13,7 +13,6 @@ export const App = () => {
   return (
     <>
       <BrowserRouter>
-        <ScrollToTop />
         <Routes>
           <Route exact path="/" element={<Main />} />
           <Route exact path="/items/concept" element={<ItemConcept />} />
