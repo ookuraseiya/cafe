@@ -8,7 +8,7 @@
 
 Top ページの画面です。
 
-![Cafe_topPage](https://github.com/ookuraseiya/cafe/assets/79490150/6d746eb9-9b48-4cac-b270-d197e7c1cbee)
+![Cafe_topPage](https://github.com/ookuraseiya/cafe/assets/79490150/0cf09729-1425-4548-b3e5-2c0d181f72cc)
 
 以下のURLが本番環境に上げたものです。
 
@@ -18,15 +18,27 @@ https://seiya-cafe-site.netlify.app/
 
 # 開発環境
 
-Frontend
+言語
 
-- React.js 18.1.0
 - HTML
 - SCSS(CSS)
+- JavaScript
 
-Backend
+ライブラリ
+- React.js
 
-- microCMS
+エディタ
+
+- Visual Studio Code
+
+サーバー
+- Express
+
+OS
+- Windows
+
+CMS
+- MicroCMS
 
 <br>
 
