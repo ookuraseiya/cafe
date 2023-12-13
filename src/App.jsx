@@ -7,7 +7,6 @@ import { ItemEvent } from './components/items/ItemEvent';
 import { ItemAccess } from './components/items/ItemAccess';
 import { ItemContact } from './components/items/ItemContact';
 import { NewsDetail } from './components/items/NewsDetail';
-import { ScrollToTop } from './components/items/ScrollToTop';
 
 export const App = () => {
   return (
