@@ -15,9 +15,11 @@ SCSSレスポンシブ（https://zenn.dev/tak_dcxi/articles/2cc1828e9c1fe2）
 ・画像命名変更（images フォルダの整理）終わり
 ・css 設計修正 終わり？
 ・クラス名整理 おわり？
-・レスポンシブ対応 おわった？
+・レスポンシブ対応 (文字をレスポンシブ)
 ・共通化（mainの部分をコンポーネント化して画像をチルドレンで渡す。など）
-・News.jsx の API 連携整理（どんな投稿しても表示されるようにする。※open_hpを参考に）
+・News.jsx の API 連携整理（どんな投稿しても表示されるようにする。※open_hpを参考に）OK
+・投稿で、文章の個所に、いろんな文字を入れれるようにmicroCMSで設定する。
+・ちゃんとお問い合わせができるようにする。その時にDBも使用する。
 ・機能追加の検討（ログイン機能、ショッピング機能？など）
 ・etc....
 
@@ -80,8 +82,3 @@ https://kazunori-toybox.com/blog/jquery/fullcalendar2/
 (10) undefined. https://fullcalendar.io/api/demo-feeds/events.json.
 (11) undefined. http://www.google.com/your_feed_url/.
 (12) ja.wikipedia.org. https://ja.wikipedia.org/wiki/React.
-
-
-https://stackoverflow.com/questions/71984456/react-app-images-not-downloading-after-npm-build
-reactのプロジェクトを作り直して１から行いなおす。
-問題点：画像が反映されない＆画像がビルドできない。
