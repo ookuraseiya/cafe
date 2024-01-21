@@ -170,6 +170,13 @@ export const NewsDetail = () => {
                     loading="lazy"
                   />
                 ) : null}
+
+                {post.test_text && post.test_text ? (
+                  <h1
+                    className="newsDetail__item--text"
+                    dangerouslySetInnerHTML={{ __html: post.test_text }}
+                  />
+                ) : null}
               </div>
             </div>
           </section>

@@ -7,7 +7,7 @@ import { Footer } from '../modules/Footer';
 export const Main = () => {
   return (
     <>
-    <Header />
+      <Header />
       <section className="main">
         <div className="container">
           <div className="main__flex">
@@ -155,11 +155,7 @@ export const Main = () => {
         </div>
       </section>
       {/* <section className="info-container"> */}
-      <section className="news">
-        <h1 className="news__title">NEWS</h1>
-        <p className="news__title--sub">お知らせ一覧</p>
-        <News />
-      </section>
+      <News />
       {/* </section> */}
       <section className="access">
         <div className="access__body">

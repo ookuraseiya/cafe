@@ -10,7 +10,7 @@ Top ページの画面です。
 
 ![Cafe_topPage](https://github.com/ookuraseiya/cafe/assets/79490150/0cf09729-1425-4548-b3e5-2c0d181f72cc)
 
-以下のURLが本番環境に上げたものです。
+以下の URL が本番環境に上げたものです。
 
 https://seiya-cafe-site.netlify.app/
 
@@ -25,6 +25,7 @@ https://seiya-cafe-site.netlify.app/
 - JavaScript
 
 ライブラリ
+
 - React.js
 
 エディタ
@@ -32,12 +33,15 @@ https://seiya-cafe-site.netlify.app/
 - Visual Studio Code
 
 サーバー
+
 - Express
 
 OS
+
 - Windows
 
 CMS
+
 - MicroCMS
 
 <br>
@@ -58,8 +62,9 @@ npm start
 
 これから以下の機能を実装・追加しようと考えています。
 
-1.  microCMS のコンテンツを増やす
-2.  機能追加の検討（ログイン機能、ショッピング機能？など）
+1.  EmailJS を使って、お問い合わせページの改良
+2.  NEWS ページをリッチテキストに変更 & カスタム class の作成 (他のカフェサイトのブログ投稿を参考にする)
+3.  News 一覧ページ で検索機能を作る
 
 <br>
 

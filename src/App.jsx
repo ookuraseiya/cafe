@@ -6,6 +6,7 @@ import { ItemMenu } from './components/items/ItemMenu';
 import { ItemEvent } from './components/items/ItemEvent';
 import { ItemAccess } from './components/items/ItemAccess';
 import { ItemContact } from './components/items/ItemContact';
+import { NewsList } from './components/items/NewsList';
 import { NewsDetail } from './components/items/NewsDetail';
 
 export const App = () => {
@@ -19,6 +20,7 @@ export const App = () => {
           <Route exact path="/items/event" element={<ItemEvent />} />
           <Route exact path="/items/access" element={<ItemAccess />} />
           <Route exact path="/items/contact" element={<ItemContact />} />
+          <Route exact path="/items/newsList" element={<NewsList />} />
           <Route exact path="/items/news/:id" element={<NewsDetail />} />
         </Routes>
       </BrowserRouter>

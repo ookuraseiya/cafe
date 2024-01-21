@@ -1154,6 +1154,31 @@ template {
 .news__item:hover:before {
   width: 100%;
 }
+.news__button {
+  text-align: -webkit-center;
+  margin-top: 8%;
+}
+.news__button--layout {
+  display: block;
+  width: 30%;
+  font-size: 2.6em;
+}
+@media screen and (max-width: 1200px) {
+  .news__button--layout {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 1200px) and (max-width: 992px) {
+  .news__button--layout {
+    width: 80%;
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 1200px) and (max-width: 992px) and (max-width: 576px) {
+  .news__button--layout {
+    margin: 0 auto;
+  }
+}
 
 /*sns*/
 .sns {
