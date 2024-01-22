@@ -1,6 +1,6 @@
 .hamburgerMenu {
   display: none;
-  @include responsive(lg) {
+  @include responsive(xxl) {
     display: block;
   }
   position: relative;

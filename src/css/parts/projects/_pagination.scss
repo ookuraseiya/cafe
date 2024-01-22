@@ -3,6 +3,11 @@
   align-items: center;
   justify-content: center;
   list-style: none;
+  @include margin-top();
+  @include responsive(md) {
+    margin-top: 10%;
+    width: 100%;
+  }
 }
 
 .page-item {

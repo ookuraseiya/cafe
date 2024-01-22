@@ -1,0 +1,58 @@
+.search {
+  width: 35%;
+  @include margin-top();
+  @include responsive(xxl) {
+    width: 30%;
+    @include responsive(lg) {
+      width: 35%;
+      @include responsive(md) {
+        margin-top: 10%;
+        width: 100%;
+      }
+    }
+  }
+
+  &__form {
+    display: grid;
+  }
+
+  &__input {
+    width: 60%;
+    height: 34px;
+    padding: 1px 5px 1px 8px;
+    border: 1px solid #000;
+    font-size: 16px;
+    color: #000;
+    @include margin-bottom();
+    @include responsive(xxl) {
+      width: 80%;
+      @include responsive(lg) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__button {
+    text-align: center;
+    width: 15%;
+    height: 34px;
+    border: none;
+    background-color: #a48c61;
+    color: #fff;
+    font-size: 16px;
+    @include responsive(xxl) {
+      width: 30%;
+      @include responsive(lg) {
+        width: 40%;
+      }
+    }
+    cursor: pointer;
+    &::before {
+      width: 14px;
+      height: 14px;
+      margin-right: 5px;
+      background-repeat: no-repeat;
+      content: "";
+    }
+  }
+}

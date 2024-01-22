@@ -4,14 +4,16 @@ import { Header } from '../modules/Header';
 import { Footer } from '../modules/Footer';
 import Moment from 'react-moment';
 import ReactPaginate from 'react-paginate';
+import { FetchData } from './FetchData';
 
 export const NewsList = () => {
-  const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
+  const [query, setQuery] = useState('');
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     fetch(
-      `${process.env.REACT_APP_DOMAIN}${process.env.REACT_APP_ENDPOINT}?limit=20&orders=-publishedAt`,
+      `${process.env.REACT_APP_DOMAIN}${process.env.REACT_APP_ENDPOINT}?limit=100&orders=-publishedAt`,
       {
         headers: {
           'X-API-KEY': process.env.REACT_APP_API_KEY,
@@ -29,6 +31,11 @@ export const NewsList = () => {
     setCurrentPage(event.selected);
   };
 
+  const handleSearch = async () => {
+    const results = await FetchData(query);
+    setPosts(results);
+  };
+
   const PER_PAGE = 10;
   const offset = currentPage * PER_PAGE;
   const pageCount = Math.ceil(posts.length / PER_PAGE);
@@ -36,44 +43,90 @@ export const NewsList = () => {
   return (
     <>
       <Header />
-      <section className="news">
-        <h1 className="news__title">NEWS LIST</h1>
-        <p className="news__title--sub">お知らせ一覧</p>
-        <div className="news__list">
-          {posts?.slice(offset, offset + PER_PAGE).map((post) => (
-            <Link
-              key={post.id}
-              to={`/items/news/${post.id}`}
-              className="news__item"
-            >
-              <Moment format="YYYY/MM/DD HH:mm" className="news__item--day">
-                {post.updatedAt}
-              </Moment>
-              <h1 key={post.id} className="news__item--title">
-                {post.title}
-              </h1>
-            </Link>
-          ))}
-        </div>
-        <ReactPaginate
-          pageCount={pageCount}
-          marginPagesDisplayed={2}
-          pageRangeDisplayed={10}
-          onPageChange={handlePageClick}
-          containerClassName="pagination" //ページネーションリンクの親要素のクラス名
-          pageClassName="page-item" //各子要素(li要素)のクラス名
-          pageLinkClassName="page-link" //ページネーションのリンクのクラス名
-          activeClassName="active"
-          previousLabel={'<'}
-          nextLabel={'>'}
-          previousClassName="page-item" // '<'の親要素(li)のクラス名
-          nextClassName="page-item" //'>'の親要素(li)のクラス名
-          previousLinkClassName="page-link" //'<'のリンクのクラス名
-          nextLinkClassName="page-link" //'>'のリンクのクラス名
-          disabledClassName="disabled"
-          breakLabel={'...'}
-          breakClassName={'break-me'}
-        />
+      <section className="newsList">
+        <h1 className="newsList__title">NEWS LIST</h1>
+        <p className="newsList__title--sub">お知らせ一覧</p>
+        <section className="info__container">
+          <div className="newsList__wrapper">
+            {posts.length > 0 ? (
+              posts.slice(offset, offset + PER_PAGE).map((post) => (
+                <Link
+                  key={post.id}
+                  to={`/items/news/${post.id}`}
+                  className="newsList__item"
+                >
+                  <Moment
+                    format="YYYY/MM/DD HH:mm"
+                    className="newsList__item--day"
+                  >
+                    {post.updatedAt}
+                  </Moment>
+                  <h1 key={post.id} className="newsList__item--title">
+                    {post.title}
+                  </h1>
+                </Link>
+              ))
+            ) : (
+              <div className="newsDetail__error">
+                <h1 className="newsDetail__error--title">投稿がありません。</h1>
+                <p className="newsDetail__error--text">
+                  大変申し訳ありませんが、投稿がありません。
+                </p>
+              </div>
+            )}
+            {/* {posts.slice(offset, offset + PER_PAGE).map((post) => (
+              <Link
+                key={post.id}
+                to={`/items/news/${post.id}`}
+                className="newsList__item"
+              >
+                <Moment
+                  format="YYYY/MM/DD HH:mm"
+                  className="newsList__item--day"
+                >
+                  {post.updatedAt}
+                </Moment>
+                <h1 key={post.id} className="newsList__item--title">
+                  {post.title}
+                </h1>
+              </Link>
+            ))} */}
+            <ReactPaginate
+              pageCount={pageCount}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={10}
+              onPageChange={handlePageClick}
+              containerClassName="pagination"
+              pageClassName="page-item"
+              pageLinkClassName="page-link"
+              activeClassName="active"
+              previousLabel={'<'}
+              nextLabel={'>'}
+              previousClassName="page-item"
+              nextClassName="page-item"
+              previousLinkClassName="page-link"
+              nextLinkClassName="page-link"
+              disabledClassName="disabled"
+              breakLabel={'...'}
+              breakClassName={'break-me'}
+            />
+          </div>
+          <div className="search">
+            <form action="#" className="search__form">
+              <label className="search__label">
+                <input
+                  className="search__input"
+                  type="text"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                />
+              </label>
+              <button className="search__button" onClick={handleSearch}>
+                検索
+              </button>
+            </form>
+          </div>
+        </section>
       </section>
       <Footer />
     </>
