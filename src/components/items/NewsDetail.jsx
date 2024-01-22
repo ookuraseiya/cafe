@@ -82,8 +82,8 @@ export const NewsDetail = () => {
                 loading="lazy"
               />
               <h1 className="newsDetail__item--header">{post.title}</h1>
-              <Moment format="YYYY/MM/DD" className="newsDetail__item--time">
-                {post.time}
+              <Moment format="YYYY/MM/DD HH:mm" className="newsDetail__item--time">
+                {post.updatedAt}
               </Moment>
               <h1 className="newsDetail__item--text">{post.text}</h1>
 

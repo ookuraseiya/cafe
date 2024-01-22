@@ -5,7 +5,6 @@ import Moment from 'react-moment';
 export const News = () => {
   const [posts, setPosts] = useState([]);
 
-  // 新着3件のみを表示 それ以外は「NewsList.jsx」で表示
   useEffect(() => {
     fetch(
       `${process.env.REACT_APP_DOMAIN}${process.env.REACT_APP_ENDPOINT}?limit=3&orders=-publishedAt`,
@@ -25,7 +24,7 @@ export const News = () => {
   return (
     <section className="news">
       <h1 className="news__title">NEWS</h1>
-      <p className="news__title--sub">お知らせ一覧</p>
+      <p className="news__title--sub">新着のお知らせ</p>
       <div>
         {posts?.map((post) => (
           <Link
@@ -33,8 +32,8 @@ export const News = () => {
             to={`/items/news/${post.id}`}
             className="news__item"
           >
-            <Moment format="YYYY/MM/DD" className="news__item--day">
-              {post.time}
+            <Moment format="YYYY/MM/DD HH:mm" className="news__item--day">
+              {post.updatedAt}
             </Moment>
             <h1 key={post.id} className="news__item--title">
               {post.title}
@@ -44,7 +43,7 @@ export const News = () => {
       </div>
       <div className="news__button">
         <Link to="/items/newsList">
-          <button className="news__button--layout button">サイト一覧</button>
+          <button className="news__button--layout button">お知らせ一覧</button>
         </Link>
       </div>
     </section>

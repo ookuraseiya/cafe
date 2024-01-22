@@ -297,6 +297,9 @@
       }
     }
   }
+  &__list {
+    @include margin-bottom();
+  }
   &__button {
     text-align: -webkit-center;
     margin-top: 8%;

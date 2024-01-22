@@ -1,0 +1,33 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.page-item {
+  margin: 0 0.5%;
+}
+
+.page-link {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #a48c61;
+  font-size: 14px;
+  transition: all 0.2s linear;
+}
+
+.active {
+  background-color: #a48c61;
+  color: #fff;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.disabled {
+  display: none;
+}
