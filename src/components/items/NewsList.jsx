@@ -34,6 +34,7 @@ export const NewsList = () => {
   const handleSearch = async () => {
     const results = await FetchData(query);
     setPosts(results);
+    handlePageClick({ selected: 0 });
   };
 
   const PER_PAGE = 10;
@@ -74,23 +75,6 @@ export const NewsList = () => {
                 </p>
               </div>
             )}
-            {/* {posts.slice(offset, offset + PER_PAGE).map((post) => (
-              <Link
-                key={post.id}
-                to={`/items/news/${post.id}`}
-                className="newsList__item"
-              >
-                <Moment
-                  format="YYYY/MM/DD HH:mm"
-                  className="newsList__item--day"
-                >
-                  {post.updatedAt}
-                </Moment>
-                <h1 key={post.id} className="newsList__item--title">
-                  {post.title}
-                </h1>
-              </Link>
-            ))} */}
             <ReactPaginate
               pageCount={pageCount}
               marginPagesDisplayed={2}
@@ -112,7 +96,11 @@ export const NewsList = () => {
             />
           </div>
           <div className="search">
-            <form action="#" className="search__form">
+            <form
+              action="#"
+              className="search__form"
+              onSubmit={(e) => e.preventDefault()}
+            >
               <label className="search__label">
                 <input
                   className="search__input"
