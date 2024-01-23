@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { Header } from '../modules/Header';
 import { Footer } from '../modules/Footer';
 import Moment from 'react-moment';
-import ReactPaginate from 'react-paginate';
 import { FetchData } from './FetchData';
+import { Pagination } from './Pagination';
 
 export const NewsList = () => {
-  const [currentPage, setCurrentPage] = useState(0);
+  let { pageId } = useParams();
+  const navigate = useNavigate();
+  const [currentPage, setCurrentPage] = useState(1);
   const [query, setQuery] = useState('');
   const [posts, setPosts] = useState([]);
 
@@ -27,19 +29,21 @@ export const NewsList = () => {
       });
   }, []);
 
-  const handlePageClick = (event) => {
-    setCurrentPage(event.selected);
-  };
+  console.log('posts : ', posts);
+
+  useEffect(() => {
+    setCurrentPage(Number(pageId));
+  }, [pageId]);
 
   const handleSearch = async () => {
     const results = await FetchData(query);
     setPosts(results);
-    handlePageClick({ selected: 0 });
+    navigate('/items/newsList/1');
   };
 
   const PER_PAGE = 10;
-  const offset = currentPage * PER_PAGE;
-  const pageCount = Math.ceil(posts.length / PER_PAGE);
+  const LastPost = currentPage * PER_PAGE;
+  const FirstPost = LastPost - PER_PAGE;
 
   return (
     <>
@@ -50,7 +54,7 @@ export const NewsList = () => {
         <section className="info__container">
           <div className="newsList__wrapper">
             {posts.length > 0 ? (
-              posts.slice(offset, offset + PER_PAGE).map((post) => (
+              posts.slice(FirstPost, LastPost).map((post) => (
                 <Link
                   key={post.id}
                   to={`/items/news/${post.id}`}
@@ -75,24 +79,10 @@ export const NewsList = () => {
                 </p>
               </div>
             )}
-            <ReactPaginate
-              pageCount={pageCount}
-              marginPagesDisplayed={2}
-              pageRangeDisplayed={10}
-              onPageChange={handlePageClick}
-              containerClassName="pagination"
-              pageClassName="page-item"
-              pageLinkClassName="page-link"
-              activeClassName="active"
-              previousLabel={'<'}
-              nextLabel={'>'}
-              previousClassName="page-item"
-              nextClassName="page-item"
-              previousLinkClassName="page-link"
-              nextLinkClassName="page-link"
-              disabledClassName="disabled"
-              breakLabel={'...'}
-              breakClassName={'break-me'}
+            <Pagination
+              PER_PAGE={PER_PAGE}
+              totalPosts={posts.length}
+              pageId={pageId}
             />
           </div>
           <div className="search">

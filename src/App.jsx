@@ -20,7 +20,7 @@ export const App = () => {
           <Route exact path="/items/event" element={<ItemEvent />} />
           <Route exact path="/items/access" element={<ItemAccess />} />
           <Route exact path="/items/contact" element={<ItemContact />} />
-          <Route exact path="/items/newsList" element={<NewsList />} />
+          <Route exact path="/items/newsList/:pageId" element={<NewsList />} />
           <Route exact path="/items/news/:id" element={<NewsDetail />} />
         </Routes>
       </BrowserRouter>

@@ -42,7 +42,7 @@ export const News = () => {
         ))}
       </div>
       <div className="news__button">
-        <Link to="/items/newsList">
+        <Link to="/items/newsList/1">
           <button className="news__button--layout button">お知らせ一覧</button>
         </Link>
       </div>
