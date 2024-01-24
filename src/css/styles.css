@@ -1999,6 +1999,9 @@ template {
     width: 100%;
   }
 }
+.pagination__link {
+  margin: 0 1%;
+}
 
 .page-item {
   margin: 0 0.5%;
@@ -2021,10 +2024,6 @@ template {
   color: #fff;
   pointer-events: none;
   border-radius: 50%;
-}
-
-.disabled {
-  display: none;
 }
 
 .search {

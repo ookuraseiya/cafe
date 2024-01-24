@@ -8,6 +8,9 @@
     margin-top: 10%;
     width: 100%;
   }
+  &__link {
+    margin: 0 1%;
+  }
 }
 
 .page-item {
@@ -31,8 +34,4 @@
   color: #fff;
   pointer-events: none;
   border-radius: 50%;
-}
-
-.disabled {
-  display: none;
 }

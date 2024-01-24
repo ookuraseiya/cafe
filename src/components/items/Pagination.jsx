@@ -12,7 +12,7 @@ export const Pagination = ({ PER_PAGE, totalPosts, pageId }) => {
     <nav>
       <ul className="pagination">
         {pageNumbers.map((number) => (
-          <li key={number}>
+          <li className='pagination__link' key={number}>
             <Link
               className={
                 Number(pageId) === number ? 'page-link active' : 'page-link'
