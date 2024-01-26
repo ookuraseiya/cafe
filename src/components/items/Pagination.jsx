@@ -1,21 +1,27 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-export const Pagination = ({ PER_PAGE, totalPosts, pageId }) => {
-  const pageNumbers = [];
-
-  for (let i = 1; i <= Math.ceil(totalPosts / PER_PAGE); i++) {
-    pageNumbers.push(i);
-  }
-
+export const Pagination = ({ pageNumbers, pageId }) => {
   return (
     <nav>
-      <ul className="pagination">
+      <ul className="paginate">
+        <li>
+          <Link
+            className={
+              Number(pageId) === 1 ? 'paginate__disabled' : 'paginate__link'
+            }
+            to={`/items/newsList/${Number(pageId) - 1}`}
+          >
+            &lt;
+          </Link>
+        </li>
         {pageNumbers.map((number) => (
-          <li className='pagination__link' key={number}>
+          <li key={number}>
             <Link
               className={
-                Number(pageId) === number ? 'page-link active' : 'page-link'
+                Number(pageId) === number
+                  ? 'paginate__link paginate__active'
+                  : 'paginate__link'
               }
               to={`/items/newsList/${number}`}
             >
@@ -23,13 +29,24 @@ export const Pagination = ({ PER_PAGE, totalPosts, pageId }) => {
             </Link>
           </li>
         ))}
+        <li>
+          <Link
+            className={
+              Number(pageId) === pageNumbers.length
+                ? 'paginate__disabled'
+                : 'paginate__link'
+            }
+            to={`/items/newsList/${Number(pageId) + 1}`}
+          >
+            &gt;
+          </Link>
+        </li>
       </ul>
     </nav>
   );
 };
 
 Pagination.propTypes = {
-  PER_PAGE: PropTypes.number.isRequired,
-  totalPosts: PropTypes.number.isRequired,
+  pageNumbers: PropTypes.array.isRequired,
   pageId: PropTypes.number.isRequired,
 };

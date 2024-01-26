@@ -1986,44 +1986,41 @@ template {
   margin: 5%;
 }
 
-.pagination {
+.paginate {
   display: flex;
-  align-items: center;
   justify-content: center;
-  list-style: none;
+  align-items: center;
+  gap: 0 2%;
+  list-style-type: none;
+  padding: 0;
   margin-top: 5%;
 }
 @media screen and (max-width: 768px) {
-  .pagination {
+  .paginate {
     margin-top: 10%;
     width: 100%;
   }
 }
-.pagination__link {
-  margin: 0 1%;
-}
-
-.page-item {
-  margin: 0 0.5%;
-}
-
-.page-link {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
+.paginate__link {
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid 1px #a48c61;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 1px;
+  background-color: #f2f2f2;
+  color: #a48c61;
+  text-decoration: none;
   font-size: 14px;
-  transition: all 0.2s linear;
 }
-
-.active {
+.paginate__active {
   background-color: #a48c61;
   color: #fff;
   pointer-events: none;
-  border-radius: 50%;
+}
+.paginate__disabled {
+  display: none;
 }
 
 .search {

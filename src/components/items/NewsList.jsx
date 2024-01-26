@@ -5,6 +5,7 @@ import { Footer } from '../modules/Footer';
 import Moment from 'react-moment';
 import { FetchData } from './FetchData';
 import { Pagination } from './Pagination';
+import { Search } from './Search';
 
 export const NewsList = () => {
   let { pageId } = useParams();
@@ -29,11 +30,27 @@ export const NewsList = () => {
       });
   }, []);
 
-  console.log('posts : ', posts);
-
   useEffect(() => {
     setCurrentPage(Number(pageId));
   }, [pageId]);
+
+  const PER_PAGE = 10;
+  const LastPost = currentPage * PER_PAGE;
+  const FirstPost = LastPost - PER_PAGE;
+  const totalPosts = posts.length;
+  const pageNumbers = [];
+
+  for (let i = 1; i <= Math.ceil(totalPosts / PER_PAGE); i++) {
+    pageNumbers.push(i);
+  }
+
+  function judge(posts, pageNumbers, pageId) {
+    if (posts.length < 0 || !pageNumbers.includes(Number(pageId))) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 
   const handleSearch = async () => {
     const results = await FetchData(query);
@@ -41,19 +58,15 @@ export const NewsList = () => {
     navigate('/items/newsList/1');
   };
 
-  const PER_PAGE = 10;
-  const LastPost = currentPage * PER_PAGE;
-  const FirstPost = LastPost - PER_PAGE;
-
   return (
     <>
       <Header />
       <section className="newsList">
         <h1 className="newsList__title">NEWS LIST</h1>
         <p className="newsList__title--sub">お知らせ一覧</p>
-        <section className="info__container">
+        <div className="info__container">
           <div className="newsList__wrapper">
-            {posts.length > 0 ? (
+            {judge(posts, pageNumbers, pageId) ? (
               posts.slice(FirstPost, LastPost).map((post) => (
                 <Link
                   key={post.id}
@@ -79,32 +92,16 @@ export const NewsList = () => {
                 </p>
               </div>
             )}
-            <Pagination
-              PER_PAGE={PER_PAGE}
-              totalPosts={posts.length}
-              pageId={pageId}
-            />
+            {judge(posts, pageNumbers, pageId) && (
+              <Pagination pageNumbers={pageNumbers} pageId={pageId} />
+            )}
           </div>
-          <div className="search">
-            <form
-              action="#"
-              className="search__form"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <label className="search__label">
-                <input
-                  className="search__input"
-                  type="text"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                />
-              </label>
-              <button className="search__button" onClick={handleSearch}>
-                検索
-              </button>
-            </form>
-          </div>
-        </section>
+          <Search
+            query={query}
+            setQuery={setQuery}
+            handleSearch={handleSearch}
+          />
+        </div>
       </section>
       <Footer />
     </>
