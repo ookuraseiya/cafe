@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { SideBar } from '../components/SideBar';
+import { SideBar } from '../components/common/SideBar';
 import Moment from 'react-moment';
-import { FadeIn } from '../components/FadeIn';
-import { PageTop } from '../components/PageTop';
+import { FadeIn } from '../components/animations/FadeIn';
+import { PageTop } from '../components/common/PageTop';
 
 export const NewsDetail = () => {
   const [post, setPost] = useState([]);

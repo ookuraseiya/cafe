@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import Moment from 'react-moment';
-import { FetchData } from '../components/FetchData';
-import { Pagination } from '../components/Pagination';
-import { Search } from '../components/Search';
-import { FadeIn } from '../components/FadeIn';
+import { FetchData } from '../components/utility/search/FetchData';
+import { Pagination } from '../components/utility/navigation/Pagination';
+import { Search } from '../components/utility/search/Search';
+import { FadeIn } from '../components/animations/FadeIn';
 
 export const NewsList = () => {
   let { pageId } = useParams();

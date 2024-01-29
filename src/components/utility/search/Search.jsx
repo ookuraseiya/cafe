@@ -15,9 +15,11 @@ export const Search = ({ query, setQuery, handleSearch }) => {
               onChange={(e) => setQuery(e.target.value)}
             />
           </label>
-          <button className="search__button" onClick={handleSearch}>
-            検索
-          </button>
+          <div className="search__button">
+            <button className="search__button--layout" onClick={handleSearch}>
+              検索
+            </button>
+          </div>
         </form>
       </section>
     </>

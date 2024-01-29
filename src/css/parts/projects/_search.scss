@@ -34,25 +34,21 @@
 
   &__button {
     text-align: center;
-    width: 15%;
-    height: 34px;
-    border: none;
-    background-color: #a48c61;
-    color: #fff;
-    font-size: 16px;
-    @include responsive(xxl) {
-      width: 30%;
-      @include responsive(lg) {
-        width: 40%;
+    &--layout {
+      cursor: pointer;
+      text-align: center;
+      width: 15%;
+      height: 34px;
+      border: none;
+      background-color: #a48c61;
+      color: #fff;
+      font-size: 16px;
+      @include responsive(xxl) {
+        width: 30%;
+        @include responsive(lg) {
+          width: 40%;
+        }
       }
-    }
-    cursor: pointer;
-    &::before {
-      width: 14px;
-      height: 14px;
-      margin-right: 5px;
-      background-repeat: no-repeat;
-      content: "";
     }
   }
 }

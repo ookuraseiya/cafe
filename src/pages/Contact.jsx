@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
-import { FadeIn } from '../components/FadeIn';
-import { PageTop } from '../components/PageTop';
+import { FadeIn } from '../components/animations/FadeIn';
+import { PageTop } from '../components/common/PageTop';
 
 const initialValues = {
   name: '',

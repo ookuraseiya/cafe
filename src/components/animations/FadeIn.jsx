@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { Header } from './Header';
-import { Footer } from './Footer';
+import { Header } from '../common/Header';
+import { Footer } from '../common/Footer';
 
 export const FadeIn = (props) => {
   return (

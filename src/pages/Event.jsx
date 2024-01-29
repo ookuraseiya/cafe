@@ -3,8 +3,8 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import { FadeIn } from '../components/FadeIn';
-import { PageTop } from '../components/PageTop';
+import { FadeIn } from '../components/animations/FadeIn';
+import { PageTop } from '../components/common/PageTop';
 
 export const Event = () => {
   const [events, setEvents] = useState([]);

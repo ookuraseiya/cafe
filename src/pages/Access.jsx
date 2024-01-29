@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FadeIn } from '../components/FadeIn';
-import { PageTop } from '../components/PageTop';
+import { FadeIn } from '../components/animations/FadeIn';
+import { PageTop } from '../components/common/PageTop';
 
 export const Access = () => {
   return (

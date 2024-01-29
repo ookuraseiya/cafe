@@ -2067,28 +2067,24 @@ template {
 }
 .search__button {
   text-align: center;
+}
+.search__button--layout {
+  cursor: pointer;
+  text-align: center;
   width: 15%;
   height: 34px;
   border: none;
   background-color: #a48c61;
   color: #fff;
   font-size: 16px;
-  cursor: pointer;
 }
 @media screen and (max-width: 1200px) {
-  .search__button {
+  .search__button--layout {
     width: 30%;
   }
 }
 @media screen and (max-width: 1200px) and (max-width: 992px) {
-  .search__button {
+  .search__button--layout {
     width: 40%;
   }
-}
-.search__button::before {
-  width: 14px;
-  height: 14px;
-  margin-right: 5px;
-  background-repeat: no-repeat;
-  content: "";
 }/*# sourceMappingURL=styles.css.map */

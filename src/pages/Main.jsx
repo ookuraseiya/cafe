@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { News } from '../components/News';
-import { FadeIn } from '../components/FadeIn';
-import { PageTop } from '../components/PageTop';
+import { News } from '../components/common/News';
+import { FadeIn } from '../components/animations/FadeIn';
+import { PageTop } from '../components/common/PageTop';
 
 export const Main = () => {
   const TopText = 'THINK\nfor\nRESIDENTS';

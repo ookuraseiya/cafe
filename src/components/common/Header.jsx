@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { HamburgerMenu } from './HamburgerMenu';
-import { ScrollToTop } from './ScrollToTop';
+import { HamburgerMenu } from '../utility/navigation/HamburgerMenu';
+import { ScrollToTop } from '../utility/navigation/ScrollToTop';
 
 export const Header = () => {
   return (
