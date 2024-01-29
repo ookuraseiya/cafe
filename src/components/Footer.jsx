@@ -15,7 +15,7 @@ export const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/items/concept"
+                  to="/concept"
                   className="footer__nav--item font__hover"
                 >
                   CONCEPT
@@ -23,7 +23,7 @@ export const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/items/menu"
+                  to="/menu"
                   className="footer__nav--item font__hover"
                 >
                   MENU
@@ -31,7 +31,7 @@ export const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/items/event"
+                  to="/event"
                   className="footer__nav--item font__hover"
                 >
                   EVENT
@@ -39,7 +39,7 @@ export const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/items/access"
+                  to="/access"
                   className="footer__nav--item font__hover"
                 >
                   ACCESE
@@ -47,7 +47,7 @@ export const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/items/contact"
+                  to="/contact"
                   className="footer__nav--item font__hover"
                 >
                   CONTACT

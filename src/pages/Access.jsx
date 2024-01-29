@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Header } from '../modules/Header';
-import { Footer } from '../modules/Footer';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 
-export const ItemAccess = () => {
+export const Access = () => {
   return (
     <>
       <Header />
@@ -74,7 +74,7 @@ export const ItemAccess = () => {
                 <br />
                 OPEN 08:30 / CLOSE 18:00
               </p>
-              <Link className="access__button button" to="/items/contact">
+              <Link className="access__button button" to="/contact">
                 CONTACT
               </Link>
             </div>

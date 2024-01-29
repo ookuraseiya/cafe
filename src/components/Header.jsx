@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { HamburgerMenu } from '../items/HamburgerMenu';
-import { ScrollToTop } from '../items/ScrollToTop';
+import { HamburgerMenu } from './HamburgerMenu';
+import { ScrollToTop } from './ScrollToTop';
 
 export const Header = () => {
   return (
@@ -23,36 +23,27 @@ export const Header = () => {
               </Link>
             </li>
             <li>
-              <Link
-                to="/items/concept"
-                className="header__nav--item font__hover"
-              >
+              <Link to="/concept" className="header__nav--item font__hover">
                 CONCEPT
               </Link>
             </li>
             <li>
-              <Link to="/items/menu" className="header__nav--item font__hover">
+              <Link to="/menu" className="header__nav--item font__hover">
                 MENU
               </Link>
             </li>
             <li>
-              <Link to="/items/event" className="header__nav--item font__hover">
+              <Link to="/event" className="header__nav--item font__hover">
                 EVENT
               </Link>
             </li>
             <li>
-              <Link
-                to="/items/access"
-                className="header__nav--item font__hover"
-              >
+              <Link to="/access" className="header__nav--item font__hover">
                 ACCESE
               </Link>
             </li>
             <li>
-              <Link
-                to="/items/contact"
-                className="header__nav--item font__hover"
-              >
+              <Link to="/contact" className="header__nav--item font__hover">
                 CONTACT
               </Link>
             </li>

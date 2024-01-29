@@ -1,8 +1,8 @@
 import React from 'react';
-import { Header } from '../modules/Header';
-import { Footer } from '../modules/Footer';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 
-export const ItemMenu = () => {
+export const Menu = () => {
   return (
     <>
       <Header />

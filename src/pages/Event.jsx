@@ -3,10 +3,10 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import { Header } from '../modules/Header';
-import { Footer } from '../modules/Footer';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 
-export const ItemEvent = () => {
+export const Event = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {

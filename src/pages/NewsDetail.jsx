@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { SideBar } from './SideBar';
-import { Header } from '../modules/Header';
-import { Footer } from '../modules/Footer';
+import { SideBar } from '../components/SideBar';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 import Moment from 'react-moment';
 
 export const NewsDetail = () => {
@@ -82,7 +82,10 @@ export const NewsDetail = () => {
                 loading="lazy"
               />
               <h1 className="newsDetail__item--header">{post.title}</h1>
-              <Moment format="YYYY/MM/DD HH:mm" className="newsDetail__item--time">
+              <Moment
+                format="YYYY/MM/DD HH:mm"
+                className="newsDetail__item--time"
+              >
                 {post.updatedAt}
               </Moment>
               <h1 className="newsDetail__item--text">{post.text}</h1>

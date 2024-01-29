@@ -10,19 +10,19 @@ export const SideBar = () => {
           <Link to="/">
             <span className="sideBar__nav--item font__hover">TOP</span>
           </Link>
-          <Link to="/items/concept">
+          <Link to="/concept">
             <span className="sideBar__nav--item font__hover">CONCEPT</span>
           </Link>
-          <Link to="/items/menu">
+          <Link to="/menu">
             <span className="sideBar__nav--item font__hover">MENU</span>
           </Link>
-          <Link to="/items/event">
+          <Link to="/event">
             <span className="sideBar__nav--item font__hover">EVENT</span>
           </Link>
-          <Link to="/items/access">
+          <Link to="/access">
             <span className="sideBar__nav--item font__hover">ACCESE</span>
           </Link>
-          <Link to="/items/contact">
+          <Link to="/contact">
             <span className="sideBar__nav--item font__hover">CONTACT</span>
           </Link>
         </ul>

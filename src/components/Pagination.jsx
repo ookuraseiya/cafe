@@ -10,7 +10,7 @@ export const Pagination = ({ pageNumbers, pageId }) => {
             className={
               Number(pageId) === 1 ? 'paginate__disabled' : 'paginate__link'
             }
-            to={`/items/newsList/${Number(pageId) - 1}`}
+            to={`/newsList/${Number(pageId) - 1}`}
           >
             &lt;
           </Link>
@@ -23,7 +23,7 @@ export const Pagination = ({ pageNumbers, pageId }) => {
                   ? 'paginate__link paginate__active'
                   : 'paginate__link'
               }
-              to={`/items/newsList/${number}`}
+              to={`/newsList/${number}`}
             >
               {number}
             </Link>
@@ -36,7 +36,7 @@ export const Pagination = ({ pageNumbers, pageId }) => {
                 ? 'paginate__disabled'
                 : 'paginate__link'
             }
-            to={`/items/newsList/${Number(pageId) + 1}`}
+            to={`/newsList/${Number(pageId) + 1}`}
           >
             &gt;
           </Link>

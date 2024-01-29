@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import { Header } from '../modules/Header';
-import { Footer } from '../modules/Footer';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 import Moment from 'react-moment';
-import { FetchData } from './FetchData';
-import { Pagination } from './Pagination';
-import { Search } from './Search';
+import { FetchData } from '../components/FetchData';
+import { Pagination } from '../components/Pagination';
+import { Search } from '../components/Search';
 
 export const NewsList = () => {
   let { pageId } = useParams();
@@ -55,7 +55,7 @@ export const NewsList = () => {
   const handleSearch = async () => {
     const results = await FetchData(query);
     setPosts(results);
-    navigate('/items/newsList/1');
+    navigate('/newsList/1');
   };
 
   return (
@@ -70,7 +70,7 @@ export const NewsList = () => {
               posts.slice(FirstPost, LastPost).map((post) => (
                 <Link
                   key={post.id}
-                  to={`/items/news/${post.id}`}
+                  to={`/news/${post.id}`}
                   className="newsList__item"
                 >
                   <Moment

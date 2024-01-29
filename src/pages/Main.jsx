@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { News } from '../../blog/News';
-import { Header } from '../modules/Header';
-import { Footer } from '../modules/Footer';
+import { News } from '../components/News';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 
 export const Main = () => {
   return (
@@ -56,7 +56,7 @@ export const Main = () => {
       {/* <section className="catch">
         <h1 className="catch-title">Menu</h1>
         <div className="catch-container">
-          <Link to="/items/menu" className="catch-item">
+          <Link to="/menu" className="catch-item">
             <div className="catch-item__2">
               <h1 className="catch-item-heading">
                 体が芯から喜ぶ自分へのご褒美
@@ -64,13 +64,13 @@ export const Main = () => {
               <h1 className="catch-item-title">MENU</h1>
             </div>
           </Link>
-          <Link to="/items/concept" className="catch-item">
+          <Link to="/concept" className="catch-item">
             <div className="catch-item__2">
               <h1 className="catch-item-heading">私達が大切にしていること。</h1>
               <h1 className="catch-item-title">CONCEPT</h1>
             </div>
           </Link>
-          <Link to="/items/event" className="catch-item">
+          <Link to="/event" className="catch-item">
             <div className="catch-item__2">
               <h1 className="catch-item-heading">元気をこころをとどける</h1>
               <h1 className="catch-item-title">EVENT</h1>
@@ -108,7 +108,7 @@ export const Main = () => {
             <p className="service__text">こんなことを考えて作りました。</p>
             <p className="service__text">大きな「深呼吸」をしに、</p>
             <p className="service__text">ぜひいらしてください。</p>
-            <Link to="/items/concept">
+            <Link to="/concept">
               <button className="service__button button">MORE</button>
             </Link>
           </div>
@@ -128,7 +128,7 @@ export const Main = () => {
             <p className="service__text">日々食べるものだから</p>
             <p className="service__text">素材にもこだわりを。</p>
             <p className="service__text">心地良い場所を一緒に。</p>
-            <Link to="/items/menu">
+            <Link to="/menu">
               <button className="service__button button">MORE</button>
             </Link>
           </div>
@@ -148,7 +148,7 @@ export const Main = () => {
             <p className="service__text">人々とのふれあいを通して</p>
             <p className="service__text">いのちを大切に。</p>
             <p className="service__text">心を豊かにするカフェ。</p>
-            <Link to="/items/event">
+            <Link to="/event">
               <button className="service__button button">MORE</button>
             </Link>
           </div>
@@ -187,7 +187,7 @@ export const Main = () => {
                 <br />
                 OPEN 08:30 / CLOSE 18:00
               </p>
-              <Link to="/items/contact">
+              <Link to="/contact">
                 <button className="access__button button">CONTACT</button>
               </Link>
             </div>

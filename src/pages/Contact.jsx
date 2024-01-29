@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
-import { Header } from '../modules/Header';
-import { Footer } from '../modules/Footer';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 
 const initialValues = {
   name: '',
@@ -33,7 +33,7 @@ const validate = (values) => {
   return errors;
 };
 
-export const ItemContact = () => {
+export const Contact = () => {
   const formik = useFormik({
     initialValues,
     onSubmit,

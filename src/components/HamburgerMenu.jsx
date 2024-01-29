@@ -35,27 +35,27 @@ export const HamburgerMenu = () => {
           </Link>
         </li>
         <li className="hamburgerMenu__content--link">
-          <Link onClick={toggleMenu} to="/items/concept">
+          <Link onClick={toggleMenu} to="/concept">
             CONCEPT
           </Link>
         </li>
         <li className="hamburgerMenu__content--link">
-          <Link onClick={toggleMenu} to="/items/menu">
+          <Link onClick={toggleMenu} to="/menu">
             MENU
           </Link>
         </li>
         <li className="hamburgerMenu__content--link">
-          <Link onClick={toggleMenu} to="/items/event">
+          <Link onClick={toggleMenu} to="/event">
             EVENT
           </Link>
         </li>
         <li className="hamburgerMenu__content--link">
-          <Link onClick={toggleMenu} to="/items/access">
+          <Link onClick={toggleMenu} to="/access">
             ACCESE
           </Link>
         </li>
         <li className="hamburgerMenu__content--link">
-          <Link onClick={toggleMenu} to="/items/contact">
+          <Link onClick={toggleMenu} to="/contact">
             CONTACT
           </Link>
         </li>

@@ -29,7 +29,7 @@ export const News = () => {
         {posts?.map((post) => (
           <Link
             key={post.id}
-            to={`/items/news/${post.id}`}
+            to={`/news/${post.id}`}
             className="news__item"
           >
             <Moment format="YYYY/MM/DD HH:mm" className="news__item--day">
@@ -42,7 +42,7 @@ export const News = () => {
         ))}
       </div>
       <div className="news__button">
-        <Link to="/items/newsList/1">
+        <Link to="/newsList/1">
           <button className="news__button--layout button">お知らせ一覧</button>
         </Link>
       </div>

@@ -22,3 +22,12 @@ SCSSレスポンシブ（https://zenn.dev/tak_dcxi/articles/2cc1828e9c1fe2）
 ・ちゃんとお問い合わせができるようにする。その時にDBも使用する。
 ・機能追加の検討（ログイン機能、ショッピング機能？など）
 ・etc....
+
+フォルダ階層は、~\cafe\libs
+
+import { createClient } from 'microcms-js-sdk';
+
+export const client = createClient({
+  serviceDomain: 'seiyaookura',
+  apiKey: process.env.API_KEY,
+});
