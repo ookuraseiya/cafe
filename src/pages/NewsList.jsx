@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
 import Moment from 'react-moment';
 import { FetchData } from '../components/FetchData';
 import { Pagination } from '../components/Pagination';
 import { Search } from '../components/Search';
+import { FadeIn } from '../components/FadeIn';
 
 export const NewsList = () => {
   let { pageId } = useParams();
@@ -60,50 +59,52 @@ export const NewsList = () => {
 
   return (
     <>
-      <Header />
-      <section className="newsList">
-        <h1 className="newsList__title">NEWS LIST</h1>
-        <p className="newsList__title--sub">お知らせ一覧</p>
-        <div className="info__container">
-          <div className="newsList__wrapper">
-            {judge(posts, pageNumbers, pageId) ? (
-              posts.slice(FirstPost, LastPost).map((post) => (
-                <Link
-                  key={post.id}
-                  to={`/news/${post.id}`}
-                  className="newsList__item"
-                >
-                  <Moment
-                    format="YYYY/MM/DD HH:mm"
-                    className="newsList__item--day"
+      <FadeIn>
+        <section className="newsList">
+          <h1 className="newsList__title">NEWS LIST</h1>
+          <p className="newsList__title--sub">お知らせ一覧</p>
+          <div className="info__container">
+            <div className="newsList__wrapper">
+              {judge(posts, pageNumbers, pageId) ? (
+                posts.slice(FirstPost, LastPost).map((post) => (
+                  <Link
+                    key={post.id}
+                    to={`/news/${post.id}`}
+                    className="newsList__item"
                   >
-                    {post.updatedAt}
-                  </Moment>
-                  <h1 key={post.id} className="newsList__item--title">
-                    {post.title}
+                    <Moment
+                      format="YYYY/MM/DD HH:mm"
+                      className="newsList__item--day"
+                    >
+                      {post.updatedAt}
+                    </Moment>
+                    <h1 key={post.id} className="newsList__item--title">
+                      {post.title}
+                    </h1>
+                  </Link>
+                ))
+              ) : (
+                <div className="newsDetail__error">
+                  <h1 className="newsDetail__error--title">
+                    投稿がありません。
                   </h1>
-                </Link>
-              ))
-            ) : (
-              <div className="newsDetail__error">
-                <h1 className="newsDetail__error--title">投稿がありません。</h1>
-                <p className="newsDetail__error--text">
-                  大変申し訳ありませんが、投稿がありません。
-                </p>
-              </div>
-            )}
-            {judge(posts, pageNumbers, pageId) && (
-              <Pagination pageNumbers={pageNumbers} pageId={pageId} />
-            )}
+                  <p className="newsDetail__error--text">
+                    大変申し訳ありませんが、投稿がありません。
+                  </p>
+                </div>
+              )}
+              {judge(posts, pageNumbers, pageId) && (
+                <Pagination pageNumbers={pageNumbers} pageId={pageId} />
+              )}
+            </div>
+            <Search
+              query={query}
+              setQuery={setQuery}
+              handleSearch={handleSearch}
+            />
           </div>
-          <Search
-            query={query}
-            setQuery={setQuery}
-            handleSearch={handleSearch}
-          />
-        </div>
-      </section>
-      <Footer />
+        </section>
+      </FadeIn>
     </>
   );
 };
