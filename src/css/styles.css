@@ -1808,11 +1808,6 @@ template {
   position: relative;
   margin-bottom: 10%;
 }
-@media screen and (max-width: 992px) {
-  .newsList {
-    width: 75%;
-  }
-}
 .newsList__title {
   width: 100%;
   text-align: center;
@@ -1846,7 +1841,13 @@ template {
 }
 @media screen and (max-width: 1200px) and (max-width: 992px) and (max-width: 768px) {
   .newsList__wrapper {
-    width: 100%;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 1200px) and (max-width: 992px) and (max-width: 768px) and (max-width: 576px) {
+  .newsList__wrapper {
+    width: 90%;
+    margin: auto;
   }
 }
 .newsList__item {
@@ -2025,11 +2026,17 @@ template {
 
 .search {
   width: 35%;
+  height: 50%;
+  display: block;
+  border: 1px solid;
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 3%;
   margin-top: 5%;
 }
 @media screen and (max-width: 1200px) {
   .search {
-    width: 30%;
+    width: 35%;
   }
 }
 @media screen and (max-width: 1200px) and (max-width: 992px) {
@@ -2040,11 +2047,45 @@ template {
 @media screen and (max-width: 1200px) and (max-width: 992px) and (max-width: 768px) {
   .search {
     margin-top: 10%;
-    width: 100%;
+    width: 40%;
+  }
+}
+@media screen and (max-width: 1200px) and (max-width: 992px) and (max-width: 768px) and (max-width: 576px) {
+  .search {
+    width: 90%;
+    margin: auto;
+    padding: 7%;
+    margin-top: 5%;
   }
 }
 .search__form {
   display: grid;
+}
+.search__box {
+  padding: 4% 0;
+}
+@media screen and (max-width: 1024px) {
+  .search__box {
+    padding: 6% 0;
+  }
+}
+.search__box--title {
+  font-size: 24px;
+  color: #a48c61;
+}
+@media screen and (max-width: 1200px) {
+  .search__box--title {
+    font-size: 20px;
+  }
+}
+.search__box--label {
+  font-size: 20px;
+  margin: 0 2%;
+}
+@media screen and (max-width: 1200px) {
+  .search__box--label {
+    font-size: 14px;
+  }
 }
 .search__input {
   width: 60%;
@@ -2053,7 +2094,7 @@ template {
   border: 1px solid #000;
   font-size: 16px;
   color: #000;
-  margin-bottom: 5%;
+  margin-top: 2%;
 }
 @media screen and (max-width: 1200px) {
   .search__input {
@@ -2065,14 +2106,18 @@ template {
     width: 100%;
   }
 }
+.search__checkBox--list {
+  margin: 2% auto;
+  display: flex;
+}
 .search__button {
   text-align: center;
 }
 .search__button--layout {
   cursor: pointer;
   text-align: center;
-  width: 15%;
-  height: 34px;
+  width: 30%;
+  height: 45px;
   border: none;
   background-color: #a48c61;
   color: #fff;
@@ -2080,11 +2125,12 @@ template {
 }
 @media screen and (max-width: 1200px) {
   .search__button--layout {
-    width: 30%;
+    width: 60%;
+    height: 55px;
   }
 }
 @media screen and (max-width: 1200px) and (max-width: 992px) {
   .search__button--layout {
-    width: 40%;
+    height: 45px;
   }
 }/*# sourceMappingURL=styles.css.map */

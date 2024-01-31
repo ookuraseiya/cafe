@@ -1,19 +1,52 @@
 .search {
   width: 35%;
+  height: 50%;
+  display: block;
+  border: 1px solid;
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 3%;
   @include margin-top();
   @include responsive(xxl) {
-    width: 30%;
+    width: 35%;
     @include responsive(lg) {
       width: 35%;
       @include responsive(md) {
         margin-top: 10%;
-        width: 100%;
+        width: 40%;
+        @include responsive(sm) {
+          width: 90%;
+          margin: auto;
+          padding: 7%;
+          @include margin-top();
+        }
       }
     }
   }
 
   &__form {
     display: grid;
+  }
+
+  &__box {
+    padding: 4% 0;
+    @include responsive(xl) {
+      padding: 6% 0;
+    }
+    &--title {
+      font-size: 24px;
+      color: #a48c61;
+      @include responsive(xxl) {
+        font-size: 20px;
+      }
+    }
+    &--label {
+      font-size: 20px;
+      margin: 0 2%;
+      @include responsive(xxl) {
+        font-size: 14px;
+      }
+    }
   }
 
   &__input {
@@ -23,7 +56,7 @@
     border: 1px solid #000;
     font-size: 16px;
     color: #000;
-    @include margin-bottom();
+    margin-top: 2%;
     @include responsive(xxl) {
       width: 80%;
       @include responsive(lg) {
@@ -32,21 +65,29 @@
     }
   }
 
+  &__checkBox {
+    &--list {
+      margin: 2% auto;
+      display: flex;
+    }
+  }
+
   &__button {
     text-align: center;
     &--layout {
       cursor: pointer;
       text-align: center;
-      width: 15%;
-      height: 34px;
+      width: 30%;
+      height: 45px;
       border: none;
       background-color: #a48c61;
       color: #fff;
       font-size: 16px;
       @include responsive(xxl) {
-        width: 30%;
+        width: 60%;
+        height: 55px;
         @include responsive(lg) {
-          width: 40%;
+          height: 45px;
         }
       }
     }

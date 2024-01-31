@@ -4,7 +4,7 @@
   position: relative;
   margin-bottom: 10%;
   @include responsive(lg) {
-    width: 75%;
+    // width: 75%;
   }
   &__title {
     width: 100%;
@@ -30,7 +30,11 @@
       @include responsive(lg) {
         width: 55%;
         @include responsive(md) {
-          width: 100%;
+          width: 50%;
+          @include responsive(sm) {
+            width: 90%;
+            margin: auto;
+          }
         }
       }
     }

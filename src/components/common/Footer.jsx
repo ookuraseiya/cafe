@@ -8,50 +8,23 @@ export const Footer = () => {
         <div className="footer__left">
           <div className="footer__nav">
             <ul className="footer__nav--list">
-              <li>
-                <Link to="/" className="footer__nav--item font__hover">
-                  TOP
-                </Link>
+              <li className="footer__nav--item font__hover">
+                <Link to="/">TOP</Link>
               </li>
-              <li>
-                <Link
-                  to="/concept"
-                  className="footer__nav--item font__hover"
-                >
-                  CONCEPT
-                </Link>
+              <li className="footer__nav--item font__hover">
+                <Link to="/concept">CONCEPT</Link>
               </li>
-              <li>
-                <Link
-                  to="/menu"
-                  className="footer__nav--item font__hover"
-                >
-                  MENU
-                </Link>
+              <li className="footer__nav--item font__hover">
+                <Link to="/menu">MENU</Link>
               </li>
-              <li>
-                <Link
-                  to="/event"
-                  className="footer__nav--item font__hover"
-                >
-                  EVENT
-                </Link>
+              <li className="footer__nav--item font__hover">
+                <Link to="/event">EVENT</Link>
               </li>
-              <li>
-                <Link
-                  to="/access"
-                  className="footer__nav--item font__hover"
-                >
-                  ACCESE
-                </Link>
+              <li className="footer__nav--item font__hover">
+                <Link to="/access">ACCESE</Link>
               </li>
-              <li>
-                <Link
-                  to="/contact"
-                  className="footer__nav--item font__hover"
-                >
-                  CONTACT
-                </Link>
+              <li className="footer__nav--item font__hover">
+                <Link to="/contact">CONTACT</Link>
               </li>
             </ul>
           </div>
