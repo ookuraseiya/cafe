@@ -50,6 +50,11 @@ export const HamburgerMenu = () => {
           </Link>
         </li>
         <li className="hamburgerMenu__content--link">
+          <Link onClick={toggleMenu} to="/newsList/1">
+            NEWS
+          </Link>
+        </li>
+        <li className="hamburgerMenu__content--link">
           <Link onClick={toggleMenu} to="/access">
             ACCESE
           </Link>

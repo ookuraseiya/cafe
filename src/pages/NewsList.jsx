@@ -11,6 +11,8 @@ export const NewsList = () => {
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
   const [query, setQuery] = useState('');
+  const [categoryState, setCategoryState] = useState(null);
+  const [recommendState, setRecommendState] = useState(null);
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -52,8 +54,10 @@ export const NewsList = () => {
   }
 
   const handleSearch = async () => {
-    const results = await FetchData(query);
+    const results = await FetchData(query, categoryState, recommendState);
     setPosts(results);
+    // console.log('カテゴリー: ', categoryState);
+    // console.log('おすすめ: ', recommendState);
     navigate('/newsList/1');
   };
 
@@ -94,12 +98,16 @@ export const NewsList = () => {
                 </div>
               )}
               {judge(posts, pageNumbers, pageId) && (
-                <Pagination pageNumbers={pageNumbers} pageId={pageId} />
+                <Pagination pageNumbers={pageNumbers} pageId={Number(pageId)} />
               )}
             </div>
             <Search
               query={query}
               setQuery={setQuery}
+              categoryState={categoryState}
+              setCategoryState={setCategoryState}
+              recommendState={recommendState}
+              setRecommendState={setRecommendState}
               handleSearch={handleSearch}
             />
           </div>

@@ -1,6 +1,6 @@
 .hamburgerMenu {
   display: none;
-  @include responsive(xxl) {
+  @include responsive(xl) {
     display: block;
   }
   position: relative;
@@ -32,10 +32,10 @@
     &--link {
       text-align: center;
       font-size: 1.8em;
-      margin-bottom: 7%;
+      margin-bottom: 12%;
       &--close {
         text-align: right;
-        margin: 5%;
+        margin: 7%;
       }
     }
   }

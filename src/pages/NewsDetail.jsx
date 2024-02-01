@@ -26,7 +26,6 @@ export const NewsDetail = () => {
   }, [id]);
 
   try {
-    // /images/news/news_image01.webp
     return (
       <>
         <FadeIn>
@@ -49,13 +48,30 @@ export const NewsDetail = () => {
                   width=""
                   loading="lazy"
                 />
+
                 <h1 className="newsDetail__item--header">{post.title}</h1>
+
+                <h1 className="newsDetail__item--recommend">
+                  {post.recommend ? (
+                    <span className="newsDetail__item--recommend--span">
+                      おすすめ投稿
+                    </span>
+                  ) : null}
+                </h1>
+                <h1 className="newsDetail__item--category">
+                  カテゴリ：
+                  <span className="newsDetail__item--category--span">
+                    {post.category}
+                  </span>
+                </h1>
+
                 <Moment
                   format="YYYY/MM/DD HH:mm"
                   className="newsDetail__item--time"
                 >
                   {post.updatedAt}
                 </Moment>
+
                 <h1 className="newsDetail__item--text">{post.text}</h1>
 
                 {post.title2 && post.title2 ? (

@@ -38,6 +38,11 @@ export const Header = () => {
               </Link>
             </li>
             <li>
+              <Link to="/newsList/1" className="header__nav--item font__hover">
+                NEWS
+              </Link>
+            </li>
+            <li>
               <Link to="/access" className="header__nav--item font__hover">
                 ACCESE
               </Link>

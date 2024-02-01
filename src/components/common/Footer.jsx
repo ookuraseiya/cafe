@@ -21,6 +21,9 @@ export const Footer = () => {
                 <Link to="/event">EVENT</Link>
               </li>
               <li className="footer__nav--item font__hover">
+                <Link to="/newsList/1">NEWS</Link>
+              </li>
+              <li className="footer__nav--item font__hover">
                 <Link to="/access">ACCESE</Link>
               </li>
               <li className="footer__nav--item font__hover">

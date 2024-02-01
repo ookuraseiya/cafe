@@ -1,23 +1,29 @@
 // import React, { useState } from 'react';
 
-export const Search = ({ query, setQuery, handleSearch }) => {
-  // const [value, setValue] = useState(null);
+export const Search = ({
+  query,
+  setQuery,
+  categoryState,
+  setCategoryState,
+  recommendState,
+  setRecommendState,
+  handleSearch,
+}) => {
+  const categorys = [
+    '新商品情報',
+    '季節の限定メニュー',
+    'イベント情報',
+    '店舗のお知らせ',
+    'スタッフブログ',
+  ];
 
-  // const categorys = [
-  //   '新商品情報',
-  //   '季節の限定メニュー',
-  //   'イベント情報',
-  //   '店舗のお知らせ',
-  //   'スタッフブログ',
-  // ];
-
-  // const changeValue = (e) => {
-  //   if (value === e.target.value) {
-  //     setValue(null);
-  //   } else {
-  //     setValue(e.target.value);
-  //   }
-  // };
+  const clearRadioSelected = (name) => {
+    if (name === 'category') {
+      setCategoryState(null);
+    } else if (name === 'recommend') {
+      setRecommendState(null);
+    }
+  };
 
   return (
     <>
@@ -39,7 +45,7 @@ export const Search = ({ query, setQuery, handleSearch }) => {
               />
             </label>
           </div>
-          {/* <div className="search__box">
+          <div className="search__box">
             <h1 className="search__box--title">カテゴリ検索</h1>
             <div className="search__checkBox">
               {categorys.map((category) => {
@@ -47,11 +53,12 @@ export const Search = ({ query, setQuery, handleSearch }) => {
                   <div className="search__checkBox--list" key={category}>
                     <input
                       id={category}
-                      type="checkbox"
+                      type="radio"
                       name="category"
                       value={category}
-                      // onChange={changeValue}
-                      // checked={category}
+                      checked={categoryState === category}
+                      onChange={() => setCategoryState(category)}
+                      onClick={() => clearRadioSelected('category')}
                     />
                     <label className="search__box--label" htmlFor={category}>
                       {category}
@@ -67,16 +74,19 @@ export const Search = ({ query, setQuery, handleSearch }) => {
               <div className="search__checkBox--list">
                 <input
                   id="recommend"
-                  type="checkbox"
+                  type="radio"
                   name="recommend"
-                  value="ture"
-                  // onChange={changeValue}
-                  // checked="ture"
+                  value={true}
+                  checked={recommendState === true}
+                  onChange={() => setRecommendState(true)}
+                  onClick={() => clearRadioSelected('recommend')}
                 />
-                <label className="search__box--label">おすすめ検索をする</label>
+                <label className="search__box--label" htmlFor={'recommend'}>
+                  おすすめ検索をする
+                </label>
               </div>
             </div>
-          </div> */}
+          </div>
           <div className="search__button">
             <button className="search__button--layout" onClick={handleSearch}>
               検索
