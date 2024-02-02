@@ -1,6 +1,7 @@
 # Cafe サイト
 
-インターンとして勤めている会社でこれから Web制作・開発で microCMS と react.js を採用する方向になりましたが、両方の知識があまりなかったため練習も兼ねて、 microCMS と React.js を使い Cafe サイトを制作しました。
+microCMS と React.js を使い Cafe サイトを制作しました。
+検索機能など色々なものを追加して遊んでいます。
 
 <br>
 
