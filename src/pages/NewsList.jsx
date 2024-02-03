@@ -5,6 +5,7 @@ import { FetchData } from '../components/utility/search/FetchData';
 import { Pagination } from '../components/utility/navigation/Pagination';
 import { Search } from '../components/utility/search/Search';
 import { FadeIn } from '../components/animations/FadeIn';
+import { RecommendPostsSideBar } from '../components/common/RecommendPostsSideBar';
 
 export const NewsList = () => {
   let { pageId } = useParams();
@@ -101,15 +102,18 @@ export const NewsList = () => {
                 <Pagination pageNumbers={pageNumbers} pageId={Number(pageId)} />
               )}
             </div>
-            <Search
-              query={query}
-              setQuery={setQuery}
-              categoryState={categoryState}
-              setCategoryState={setCategoryState}
-              recommendState={recommendState}
-              setRecommendState={setRecommendState}
-              handleSearch={handleSearch}
-            />
+            <div className="newsList__rigth">
+              <Search
+                query={query}
+                setQuery={setQuery}
+                categoryState={categoryState}
+                setCategoryState={setCategoryState}
+                recommendState={recommendState}
+                setRecommendState={setRecommendState}
+                handleSearch={handleSearch}
+              />
+              <RecommendPostsSideBar />
+            </div>
           </div>
         </section>
       </FadeIn>

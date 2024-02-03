@@ -1,0 +1,68 @@
+.recommendPostsSideBar {
+  width: 100%;
+  height: auto;
+  border: 1px solid;
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 6% 3%;
+  margin-top: 10%;
+  @include responsive(xl) {
+    padding: 8%;
+    @include responsive(sm) {
+      padding: 15% 8%;
+      margin-bottom: 10%;
+    }
+  }
+  &__header {
+    @include main-color();
+    @include font30();
+    @include responsive(xl) {
+      @include font24();
+      @include responsive(lg) {
+        @include font20();
+      }
+    }
+  }
+  &__item {
+    margin-top: 10%;
+    border-bottom: 2px solid #e8e8e8;
+    width: 100%;
+    position: relative;
+    display: block;
+    &--day {
+      color: #000;
+      @include font14();
+    }
+    &--title {
+      color: #a48c61;
+      @include font20();
+      @include responsive(xl) {
+        @include font16();
+        @include responsive(lg) {
+          @include font14();
+          @include responsive(sm) {
+            @include font12();
+          }
+        }
+      }
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      background-color: #a48c61;
+      width: 0;
+      height: 1px;
+      bottom: -2px;
+      left: 0;
+      -webkit-transition: 0.4s ease 0s;
+      transition: 0.4s ease 0s;
+    }
+    &:hover {
+      text-decoration: none;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+}

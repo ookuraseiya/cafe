@@ -13,8 +13,8 @@
   font-size: 4em;
 }
 
-@mixin font24 {
-  font-size: 2.4em;
+@mixin font38 {
+  font-size: 3.8em;
 }
 
 @mixin font36 {
@@ -35,6 +35,10 @@
 
 @mixin font28 {
   font-size: 2.8em;
+}
+
+@mixin font24 {
+  font-size: 2.4em;
 }
 
 @mixin font26 {

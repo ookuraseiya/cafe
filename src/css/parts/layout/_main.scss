@@ -307,13 +307,16 @@
       display: block;
       width: 30%;
       @include font26();
-      @include responsive(xxl) {
-        width: 70%;
-        @include responsive(lg) {
-          width: 80%;
-          @include font20();
-          @include responsive(sm) {
-            margin: 0 auto;
+      @include responsive(xxxl) {
+        width: 40%;
+        @include responsive(xxl) {
+          width: 70%;
+          @include responsive(lg) {
+            width: 80%;
+            @include font20();
+            @include responsive(sm) {
+              margin: 0 auto;
+            }
           }
         }
       }
