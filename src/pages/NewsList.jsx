@@ -57,9 +57,8 @@ export const NewsList = () => {
   const handleSearch = async () => {
     const results = await FetchData(query, categoryState, recommendState);
     setPosts(results);
-    // console.log('カテゴリー: ', categoryState);
-    // console.log('おすすめ: ', recommendState);
     navigate('/newsList/1');
+    window.scrollTo(0, 0);
   };
 
   return (
