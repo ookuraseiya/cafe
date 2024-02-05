@@ -1,0 +1,47 @@
+.contactComplete {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  @include container();
+  @include responsive(xl) {
+    height: 1000px;
+    @include responsive(md) {
+      height: 700px;
+      @include responsive(xs) {
+        height: 400px;
+      }
+    }
+  }
+  justify-content: center;
+  &__title {
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+    color: #a48c61;
+    @include font40();
+    margin: 0;
+    @include responsive(sm) {
+      @include font24();
+    }
+  }
+  &__text {
+    width: 100%;
+    text-align: center;
+    @include margin-bottom();
+    @include font16();
+    @include responsive(sm) {
+      @include font18();
+    }
+  }
+  &__button {
+    display: block;
+    width: 48%;
+    margin: 0 auto;
+    text-align: center;
+    @include font22();
+    @include responsive(sm) {
+      width: 85%;
+      margin: 10% auto;
+    }
+  }
+}

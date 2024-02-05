@@ -314,8 +314,12 @@
           @include responsive(lg) {
             width: 80%;
             @include font20();
-            @include responsive(sm) {
-              margin: 0 auto;
+            @include responsive(md) {
+              width: 45%;
+              @include responsive(sm) {
+                width: 80%;
+                margin: 0 auto;
+              }
             }
           }
         }

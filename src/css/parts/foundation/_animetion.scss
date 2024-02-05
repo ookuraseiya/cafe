@@ -58,11 +58,11 @@
     width: 70%;
     height: 70vh;
     position: relative;
-    @include responsive(lg) {
-      height: 65vh;
-      @include responsive(lg) {
+    @include responsive(xl) {
+      height: 45vh;
+      @include responsive(sm) {
         width: 66%;
-        height: 35vh;
+        height: 30vh;
       }
     }
     &--list {

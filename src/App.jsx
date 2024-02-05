@@ -8,6 +8,7 @@ import { Access } from './pages/Access';
 import { Contact } from './pages/Contact';
 import { NewsList } from './pages/NewsList';
 import { NewsDetail } from './pages/NewsDetail';
+import { ContactComplete } from './pages/ContactComplete';
 
 export const App = () => {
   return (
@@ -20,6 +21,7 @@ export const App = () => {
           <Route exact path="/event" element={<Event />} />
           <Route exact path="/access" element={<Access />} />
           <Route exact path="/contact" element={<Contact />} />
+          <Route exact path="/contactComplete" element={<ContactComplete />} />
           <Route exact path="/newsList/:pageId" element={<NewsList />} />
           <Route exact path="/news/:id" element={<NewsDetail />} />
         </Routes>

@@ -519,15 +519,15 @@ template {
   height: 70vh;
   position: relative;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1024px) {
   .main__slider {
-    height: 65vh;
+    height: 45vh;
   }
 }
-@media screen and (max-width: 992px) and (max-width: 992px) {
+@media screen and (max-width: 1024px) and (max-width: 576px) {
   .main__slider {
     width: 66%;
-    height: 35vh;
+    height: 30vh;
   }
 }
 .main__slider--list {
@@ -1183,8 +1183,14 @@ template {
     font-size: 2em;
   }
 }
-@media screen and (max-width: 1400px) and (max-width: 1200px) and (max-width: 992px) and (max-width: 576px) {
+@media screen and (max-width: 1400px) and (max-width: 1200px) and (max-width: 992px) and (max-width: 768px) {
   .news__button--layout {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 1400px) and (max-width: 1200px) and (max-width: 992px) and (max-width: 768px) and (max-width: 576px) {
+  .news__button--layout {
+    width: 80%;
     margin: 0 auto;
   }
 }
@@ -1832,6 +1838,66 @@ template {
 @media screen and (max-width: 576px) {
   .contact__button {
     width: 70%;
+    margin: 10% auto;
+  }
+}
+
+.contactComplete {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  margin: 0 8%;
+  justify-content: center;
+}
+@media screen and (max-width: 1024px) {
+  .contactComplete {
+    height: 1000px;
+  }
+}
+@media screen and (max-width: 1024px) and (max-width: 768px) {
+  .contactComplete {
+    height: 700px;
+  }
+}
+@media screen and (max-width: 1024px) and (max-width: 768px) and (max-width: 375px) {
+  .contactComplete {
+    height: 400px;
+  }
+}
+.contactComplete__title {
+  width: 100%;
+  text-align: center;
+  margin-top: 5%;
+  color: #a48c61;
+  font-size: 4em;
+  margin: 0;
+}
+@media screen and (max-width: 576px) {
+  .contactComplete__title {
+    font-size: 2.4em;
+  }
+}
+.contactComplete__text {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5%;
+  font-size: 1.6em;
+}
+@media screen and (max-width: 576px) {
+  .contactComplete__text {
+    font-size: 1.8em;
+  }
+}
+.contactComplete__button {
+  display: block;
+  width: 48%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2.2em;
+}
+@media screen and (max-width: 576px) {
+  .contactComplete__button {
+    width: 85%;
     margin: 10% auto;
   }
 }

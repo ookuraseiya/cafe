@@ -1,44 +1,35 @@
-import React from 'react';
-import { useFormik } from 'formik';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FadeIn } from '../components/animations/FadeIn';
 import { PageTop } from '../components/common/PageTop';
-
-const initialValues = {
-  name: '',
-  email: '',
-  channel: '',
-};
-
-const onSubmit = (values) => {
-  console.log('form data', values);
-};
-
-const validate = (values) => {
-  let errors = {};
-
-  if (!values.name) {
-    errors.name = 'Name is Required';
-  }
-
-  if (!values.email) {
-    errors.email = 'Email is Required';
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email format';
-  }
-
-  if (!values.channel) {
-    errors.channel = 'Channel is Required';
-  }
-
-  return errors;
-};
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import db from '../firebase/firebase';
 
 export const Contact = () => {
-  const formik = useFormik({
-    initialValues,
-    onSubmit,
-    validate,
-  });
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [channel, setChannel] = useState('');
+  const navigate = useNavigate();
+
+  const reset = () => {
+    setName('');
+    setEmail('');
+    setChannel('');
+  };
+
+  const submit = async (e) => {
+    e.preventDefault();
+    await addDoc(collection(db, 'contact_infos'), {
+      name: name,
+      email: email,
+      channel: channel,
+      created_at: serverTimestamp(),
+    });
+
+    reset();
+    navigate('/contactComplete');
+  };
+
   return (
     <>
       <FadeIn>
@@ -53,7 +44,7 @@ export const Contact = () => {
             CONTACT
           </h1>
           <p className="access__heading--sub">お問い合わせ</p>
-          <form onSubmit={formik.handleSubmit}>
+          <form onSubmit={submit}>
             <div className="contact__item">
               <label htmlFor="name" className="contact__label">
                 お名前
@@ -64,13 +55,12 @@ export const Contact = () => {
                 id="name"
                 name="name"
                 placeholder="山田 太郎"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.name}
+                required
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+                value={name}
               />
-              {formik.touched.name && formik.errors.name ? (
-                <div className="contact__error">{formik.errors.name}</div>
-              ) : null}
             </div>
 
             <div className="contact__item">
@@ -83,13 +73,12 @@ export const Contact = () => {
                 id="email"
                 name="email"
                 placeholder="example@icloud.com"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.email}
+                required
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+                value={email}
               />
-              {formik.touched.email && formik.errors.email ? (
-                <div className="contact__error">{formik.errors.email}</div>
-              ) : null}
             </div>
 
             <div className="contact__item">
@@ -102,13 +91,12 @@ export const Contact = () => {
                 id="channel"
                 name="channel"
                 placeholder="お聞きしたいこと"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.channel}
+                required
+                onChange={(e) => {
+                  setChannel(e.target.value);
+                }}
+                value={channel}
               />
-              {formik.touched.channel && formik.errors.channel ? (
-                <div className="contact__error">{formik.errors.channel}</div>
-              ) : null}
             </div>
 
             <button className="contact__button button" type="submit">

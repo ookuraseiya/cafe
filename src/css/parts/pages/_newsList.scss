@@ -3,9 +3,6 @@
   margin: 0 auto;
   position: relative;
   margin-bottom: 10%;
-  @include responsive(lg) {
-    // width: 75%;
-  }
   &__title {
     width: 100%;
     text-align: center;
@@ -100,26 +97,4 @@
       }
     }
   }
-  // &__list {
-  //   @include margin-bottom();
-  // }
-  // &__button {
-  //   text-align: -webkit-center;
-  //   margin-top: 8%;
-  //   &--layout {
-  //     display: block;
-  //     width: 30%;
-  //     @include font26();
-  //     @include responsive(xxl) {
-  //       width: 70%;
-  //       @include responsive(lg) {
-  //         width: 80%;
-  //         @include font20();
-  //         @include responsive(sm) {
-  //           margin: 0 auto;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
 }
