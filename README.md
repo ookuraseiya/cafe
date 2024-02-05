@@ -29,6 +29,14 @@ https://seiya-cafe-site.netlify.app/
 
 - React.js
 
+Backend
+
+- Firebase
+
+DB
+
+- Cloud Firestore
+
 エディタ
 
 - Visual Studio Code
