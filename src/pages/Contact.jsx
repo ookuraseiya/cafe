@@ -11,7 +11,6 @@ export const Contact = () => {
   const [channel, setChannel] = useState('');
   const navigate = useNavigate();
 
-  console.log('process.env:', process.env);
   const reset = () => {
     setName('');
     setEmail('');
