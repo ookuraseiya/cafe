@@ -12,12 +12,6 @@ const firebaseConfig = {
   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  // apiKey: 'AIzaSyB_KnbAdTOisZxtDlFNLFKeLo7B2E6QImU',
-  // authDomain: 'cafe-site-contact-218ef.firebaseapp.com',
-  // projectId: 'cafe-site-contact-218ef',
-  // storageBucket: 'cafe-site-contact-218ef.appspot.com',
-  // messagingSenderId: '489205782789',
-  // appId: '1:489205782789:web:254f3639d8cbabe9cd7f6c',
 };
 
 // Initialize Firebase
