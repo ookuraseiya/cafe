@@ -12,7 +12,6 @@ export const Contact = () => {
   const navigate = useNavigate();
 
   console.log('process.env:', process.env);
-
   const reset = () => {
     setName('');
     setEmail('');
