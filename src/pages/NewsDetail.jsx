@@ -5,6 +5,7 @@ import Moment from 'react-moment';
 import { FadeIn } from '../components/animations/FadeIn';
 import { PageTop } from '../components/common/PageTop';
 import { Loading } from '../components/animations/Loading';
+import { RichEditor } from '../components/common/RichEditor';
 
 export const NewsDetail = () => {
   const [post, setPost] = useState([]);
@@ -171,15 +172,9 @@ export const NewsDetail = () => {
                         loading="lazy"
                       />
                     ) : null}
-
-                    {post.test_text && post.test_text ? (
-                      <h1
-                        className="newsDetail__item--text"
-                        dangerouslySetInnerHTML={{ __html: post.test_text }}
-                      />
-                    ) : null}
                   </div>
                 </div>
+                <RichEditor post={post} />
               </section>
               <SideBar />
             </section>

@@ -1,25 +1,31 @@
 $breakpoints: (
   "xs": (
-    max-width: 375px,
+    max-width: 375px
   ),
   "sm": (
-    max-width: 576px,
+    max-width: 576px
   ),
   "md": (
-    max-width: 768px,
+    max-width: 768px
   ),
   "lg": (
-    max-width: 992px,
+    max-width: 992px
   ),
   "xl": (
-    max-width: 1024px,
+    max-width: 1024px
   ),
   "xxl": (
-    max-width: 1200px,
+    max-width: 1200px
   ),
   "xxxl": (
-    max-width: 1400px,
+    max-width: 1300px
   ),
+  "xxxxl": (
+    max-width: 1400px
+  ),
+  "xxxxxl": (
+    max-width: 1500px
+  )
 ) !default;
 
 @mixin responsive($breakpoint) {

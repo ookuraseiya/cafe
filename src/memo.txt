@@ -18,6 +18,93 @@ SCSSレスポンシブ（https://zenn.dev/tak_dcxi/articles/2cc1828e9c1fe2）
 ・QiitaかZennに記事投稿(
   1. ページネーションの実装方法
   2. 検索機能の実装方法
-  3. cloud firestoreの環境変数設定がうまくいかなかった話。解決策：netlityで環境変数の設定で「""」をつけない。また、netlityで環境変数を設定しなおした後は、デプロイし直す。※でないと設定しなおした環境変数が反映されない。
+  3. リッチエディタに使用方法
+  4. cloud firestoreの環境変数設定がうまくいかなかった話。解決策：netlityで環境変数の設定で「""」をつけない。また、netlityで環境変数を設定しなおした後は、デプロイし直す。※でないと設定しなおした環境変数が反映されない。
 )
 
+
+
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:68:19)
+    at Object.createHash (node:crypto:138:10)
+    at module.exports (C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\webpack\lib\util\createHash.js:90:53)
+    at NormalModule._initBuildHash (C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\webpack\lib\NormalModule.js:401:16)
+    at handleParseError (C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\webpack\lib\NormalModule.js:449:10)
+    at C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\webpack\lib\NormalModule.js:481:5
+    at C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\webpack\lib\NormalModule.js:342:12
+    at C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\loader-runner\lib\LoaderRunner.js:373:3
+    at iterateNormalLoaders (C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\loader-runner\lib\LoaderRunner.js:214:10)
+    at iterateNormalLoaders (C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\loader-runner\lib\LoaderRunner.js:221:10)
+    at C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\loader-runner\lib\LoaderRunner.js:236:3
+    at runSyncOrAsync (C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\loader-runner\lib\LoaderRunner.js:130:11)
+    at iterateNormalLoaders (C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\loader-runner\lib\LoaderRunner.js:232:2)
+    at Array.<anonymous> (C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\loader-runner\lib\LoaderRunner.js:205:4)
+    at Storage.finished (C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\enhanced-resolve\lib\CachedInputFileSystem.js:55:16)
+    at C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\enhanced-resolve\lib\CachedInputFileSystem.js:91:9
+C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\react-scripts\scripts\start.js:19
+  throw err;
+  ^
+
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:68:19)
+    at Object.createHash (node:crypto:138:10)
+    at module.exports (C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\webpack\lib\util\createHash.js:90:53)
+    at NormalModule._initBuildHash (C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\webpack\lib\NormalModule.js:401:16)
+    at C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\webpack\lib\NormalModule.js:433:10
+    at C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\webpack\lib\NormalModule.js:308:13
+    at C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\loader-runner\lib\LoaderRunner.js:367:11
+    at C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\loader-runner\lib\LoaderRunner.js:233:18
+    at context.callback (C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\loader-runner\lib\LoaderRunner.js:111:13)
+    at C:\Users\大倉聖也\Desktop\me\portfolio\cafe\node_modules\babel-loader\lib\index.js:51:103 {
+  opensslErrorStack: [ 'error:03000086:digital envelope routines::initialization error' ],
+  library: 'digital envelope routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_EVP_UNSUPPORTED'
+}
+Failed to compile.
+
+./node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs
+Can't import the named export 'Children' from non EcmaScript module (only default export is available)
+
+
+原因を教えて
+
+神→https://sebhastian.com/error-0308010c-digital-envelope-routines-unsupported/
+
+
+エラーメッセージは2つの異なる問題を示しています：
+
+1. **`error:0308010C:digital envelope routines::unsupported`**：このエラーは、Node.js v17以降でOpenSSL v3.0が使用されるようになり、それが原因で発生します¹³。このエラーは、OpenSSLの互換性の問題によるもので、特にWebpackがビルドプロセスでMD4アルゴリズムを使用していたことが関係しています⁴。この問題を解決するための一般的な方法は以下の通りです：
+    - **Node.jsのバージョンをダウングレードする**： LTSバージョンのNode (例えばV16) を使用すると、この問題が解決することが報告されています²。
+    - **openssl-legacy-providerオプションを使用する**： 開発サーバーを実行する際に、環境変数`NODE_OPTIONS`を`--openssl-legacy-provider`に設定します¹³。具体的には、`package.json`を編集し、以下のようにします：
+
+    ```json
+    "scripts": {
+      "start": "NODE_OPTIONS='--openssl-legacy-provider' react-scripts start",
+      "build": "NODE_OPTIONS='--openssl-legacy-provider' react-scripts build",
+      "test": "NODE_OPTIONS='--openssl-legacy-provider' react-scripts test",
+      "eject": "react-scripts eject"
+    }
+    ```
+
+    - **Webpackをバージョン5にアップグレードする**： Webpackのバージョン5では、Nodeの実装に依存せずに自身のMD4アルゴリズムを実装しています⁴。
+
+2. **`Can't import the named export 'Children' from non EcmaScript module (only default export is available)`**：このエラーは、ECMAScriptモジュールから名前付きエクスポートをインポートしようとしたときに発生しますが、そのモジュールは名前付きエクスポートをサポートしていないことを示しています。この問題は、パッケージのバージョンの不整合や、ビルドツール（例えばWebpackやBabel）の設定の問題によって引き起こされることがあります⁶。解決策としては、以下のような方法があります⁶：
+    - **パッケージのバージョンを更新する**：`framer-motion`パッケージの最新バージョンをインストールしてみてください。これにより、問題が解決する可能性があります。
+    - **ビルドツールの設定を更新する**：WebpackやBabelの設定を更新して、ECMAScriptモジュールの名前付きエクスポートを正しく扱うようにすることも考慮してみてください。
+
+以上が一般的な解決策ですが、具体的な手順は使用している開発環境やプロジェクトの設定によります。この情報が役立つことを願っています！
+
+ソース: Bing との会話 2024/2/7
+(1) Nodejsのバージョンを上げたら`error:0308010C:digital envelope .... https://qiita.com/akitkat/items/f455bbc088a408cbc3a5.
+(2) error:0308010C:digital envelope routines::unsupported [Fixed]. https://bobbyhadz.com/blog/react-error-digital-envelope-routines-unsupported.
+(3) How to fix error:0308010C:digital envelope routines .... https://sebhastian.com/error-0308010c-digital-envelope-routines-unsupported/.
+(4) Error message "error:0308010C:digital envelope routines .... https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported.
+(5) Can't import the named export XXXX from non EcmaScript .... https://stackoverflow.com/questions/69343038/cant-import-the-named-export-xxxx-from-non-ecmascript-module-only-default-expo.
+(6) 【備忘録】error:0308010C:digital envelope routines::unsupported. https://qiita.com/ryo_hagi/items/c433160765a7d66a8f82.
+(7) Can't import the named export '{エラー対象の変数名など}' from .... https://qiita.com/NoOne/items/524b086ddebc7326619f.
+(8) Error - Should not import the named export - Stack Overflow. https://stackoverflow.com/questions/68225719/error-should-not-import-the-named-export.
+(9) Toastify React, error when attempting to use - Stack Overflow. https://stackoverflow.com/questions/72681680/toastify-react-error-when-attempting-to-use.
+(10) Can't import the named export 'XXX' from non EcmaScript .... https://github.com/facebook/create-react-app/issues/10356.
+(11) undefined. https://nodejs.org/api/.
+(12) undefined. https://github.com/vanruesc/postprocessing.
