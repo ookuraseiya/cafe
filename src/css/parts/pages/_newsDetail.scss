@@ -41,26 +41,32 @@
     &--header {
       color: #a48c61;
       @include font36();
-      @include responsive(sm) {
-        @include font24();
+      @include responsive(md) {
+        @include font30();
+        @include responsive(sm) {
+          @include font24();
+        }
       }
     }
 
     &--recommend {
       margin: 2% 0;
-      font-size: 20px;
+      @include font20();
       &--span {
         color: #d12e2e;
         background-color: #fff;
         border: 1px solid;
         border-radius: 10px;
         padding: 0.5%;
+        @include responsive(md) {
+          padding: 1%;
+        }
       }
     }
 
     &--category {
       margin: 2% 0;
-      font-size: 20px;
+      @include font20();
       &--span {
         color: #d12e2e;
       }

@@ -38,8 +38,7 @@
   }
 
   p {
-    margin-top: 1%;
-    padding-bottom: 4%;
+    margin: 4% 0;
     @extend .fontStyle__p;
   }
 
@@ -118,8 +117,6 @@
 
   th p {
     width: 520px;
-    margin-top: 1%;
-    padding-bottom: 4%;
     @extend .fontStyle__p;
     @include responsive(xxxxxl) {
       width: 370px;
