@@ -6,6 +6,7 @@ import { Pagination } from '../components/utility/navigation/Pagination';
 import { Search } from '../components/utility/search/Search';
 import { FadeIn } from '../components/animations/FadeIn';
 import { RecommendPostsSideBar } from '../components/common/RecommendPostsSideBar';
+import { Loading } from '../components/animations/Loading';
 
 export const NewsList = () => {
   let { pageId } = useParams();
@@ -15,6 +16,7 @@ export const NewsList = () => {
   const [categoryState, setCategoryState] = useState(null);
   const [recommendState, setRecommendState] = useState(null);
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(
@@ -29,6 +31,7 @@ export const NewsList = () => {
       .then((res) => res.json())
       .then((date) => {
         setPosts(date.contents);
+        setLoading(false);
       });
   }, []);
 
@@ -63,59 +66,66 @@ export const NewsList = () => {
 
   return (
     <>
-      <FadeIn>
-        <section className="newsList">
-          <h1 className="newsList__title">NEWS LIST</h1>
-          <p className="newsList__title--sub">お知らせ一覧</p>
-          <div className="info__container">
-            <div className="newsList__wrapper">
-              {judge(posts, pageNumbers, pageId) ? (
-                posts.slice(FirstPost, LastPost).map((post) => (
-                  <Link
-                    key={post.id}
-                    to={`/news/${post.id}`}
-                    className="newsList__item"
-                  >
-                    <Moment
-                      format="YYYY/MM/DD HH:mm"
-                      className="newsList__item--day"
+      {loading ? (
+        <Loading />
+      ) : (
+        <FadeIn>
+          <section className="newsList">
+            <h1 className="newsList__title">NEWS LIST</h1>
+            <p className="newsList__title--sub">お知らせ一覧</p>
+            <div className="info__container">
+              <div className="newsList__wrapper">
+                {judge(posts, pageNumbers, pageId) ? (
+                  posts.slice(FirstPost, LastPost).map((post) => (
+                    <Link
+                      key={post.id}
+                      to={`/news/${post.id}`}
+                      className="newsList__item"
                     >
-                      {post.updatedAt}
-                    </Moment>
-                    <h1 key={post.id} className="newsList__item--title">
-                      {post.title}
+                      <Moment
+                        format="YYYY/MM/DD HH:mm"
+                        className="newsList__item--day"
+                      >
+                        {post.updatedAt}
+                      </Moment>
+                      <h1 key={post.id} className="newsList__item--title">
+                        {post.title}
+                      </h1>
+                    </Link>
+                  ))
+                ) : (
+                  <div className="newsDetail__error">
+                    <h1 className="newsDetail__error--title">
+                      投稿がありません。
                     </h1>
-                  </Link>
-                ))
-              ) : (
-                <div className="newsDetail__error">
-                  <h1 className="newsDetail__error--title">
-                    投稿がありません。
-                  </h1>
-                  <p className="newsDetail__error--text">
-                    大変申し訳ありませんが、投稿がありません。
-                  </p>
-                </div>
-              )}
-              {judge(posts, pageNumbers, pageId) && (
-                <Pagination pageNumbers={pageNumbers} pageId={Number(pageId)} />
-              )}
+                    <p className="newsDetail__error--text">
+                      大変申し訳ありませんが、投稿がありません。
+                    </p>
+                  </div>
+                )}
+                {judge(posts, pageNumbers, pageId) && (
+                  <Pagination
+                    pageNumbers={pageNumbers}
+                    pageId={Number(pageId)}
+                  />
+                )}
+              </div>
+              <div className="newsList__rigth">
+                <Search
+                  query={query}
+                  setQuery={setQuery}
+                  categoryState={categoryState}
+                  setCategoryState={setCategoryState}
+                  recommendState={recommendState}
+                  setRecommendState={setRecommendState}
+                  handleSearch={handleSearch}
+                />
+                <RecommendPostsSideBar />
+              </div>
             </div>
-            <div className="newsList__rigth">
-              <Search
-                query={query}
-                setQuery={setQuery}
-                categoryState={categoryState}
-                setCategoryState={setCategoryState}
-                recommendState={recommendState}
-                setRecommendState={setRecommendState}
-                handleSearch={handleSearch}
-              />
-              <RecommendPostsSideBar />
-            </div>
-          </div>
-        </section>
-      </FadeIn>
+          </section>
+        </FadeIn>
+      )}
     </>
   );
 };

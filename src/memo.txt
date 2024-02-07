@@ -12,7 +12,8 @@ SCSSレスポンシブ（https://zenn.dev/tak_dcxi/articles/2cc1828e9c1fe2）
 ハンバーガーメニュー（https://rui-log.com/css-hamburger-menu/）
 
 「やる事リスト（上から順に）」
-・ローディング機能の実装（NewsList.jsx,NewsDetail.jsx）
+・ローディング機能の実装（NewsList.jsx,NewsDetail.jsx）OK!
+・リッチエディタの実装
 ・クラス名整理、CSS名整理
 ・QiitaかZennに記事投稿(
   1. ページネーションの実装方法

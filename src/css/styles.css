@@ -1,4 +1,11 @@
 @charset "UTF-8";
+.loading {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 body {
   margin: 0;
   max-width: 100%;

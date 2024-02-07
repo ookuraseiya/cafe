@@ -19,6 +19,9 @@ export const SideBar = () => {
           <Link to="/event">
             <span className="sideBar__nav--item font__hover">EVENT</span>
           </Link>
+          <Link to="/newsList/1">
+            <span className="sideBar__nav--item font__hover">NEWS</span>
+          </Link>
           <Link to="/access">
             <span className="sideBar__nav--item font__hover">ACCESE</span>
           </Link>
