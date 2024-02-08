@@ -20,6 +20,8 @@ SCSSレスポンシブ（https://zenn.dev/tak_dcxi/articles/2cc1828e9c1fe2）
   2. 検索機能の実装方法
   3. リッチエディタに使用方法
   4. cloud firestoreの環境変数設定がうまくいかなかった話。解決策：netlityで環境変数の設定で「""」をつけない。また、netlityで環境変数を設定しなおした後は、デプロイし直す。※でないと設定しなおした環境変数が反映されない。
+  5. 以下のエラーについて書く
+  6. ReactでCSSファイルでbackground-imageをパスで表示する方法
 )
 
 

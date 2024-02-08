@@ -1,0 +1,21 @@
+@import "../object/mixin/image";
+
+.main {
+  @include margin-bottom();
+  @include responsive(md) {
+    margin-bottom: 10%;
+  }
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__heading {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include responsive(lg) {
+      width: 26%;
+    }
+  }
+}

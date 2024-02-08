@@ -1,38 +1,44 @@
 @charset "utf-8";
 
 //foundation
-@import "parts/foundation/loading";
-@import "parts/foundation/base";
-@import "parts/foundation/reset";
-@import "parts/foundation/animetion";
+@import "foundation/loading";
+@import "foundation/base";
+@import "foundation/reset";
+@import "foundation/animetion";
 
 //layout
-@import "parts/layout/header";
-@import "parts/layout/footer";
-@import "parts/layout/main";
-@import "parts/layout/richEditor";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/main";
+@import "layout/richEditor";
+
+// componets
+// @import "object/componets/about";
 
 //mixin
-@import "parts/mixin/container";
-@import "parts/mixin/font";
-@import "parts/mixin/image";
-@import "parts/mixin/margin";
-@import "parts/mixin/padding";
-@import "parts/mixin/responsive";
+@import "object/mixin/container";
+@import "object/mixin/font";
+@import "object/mixin/image";
+@import "object/mixin/margin";
+@import "object/mixin/padding";
+@import "object/mixin/responsive";
 
 //pages
-@import "parts/pages/concept";
-@import "parts/pages/menu";
-@import "parts/pages/access";
-@import "parts/pages/event";
-@import "parts/pages/newsDetail";
-@import "parts/pages/contact";
-@import "parts/pages/contactComplete";
-@import "parts/pages/newsList";
+@import "object/pages/concept";
+@import "object/pages/menu";
+@import "object/pages/event";
+@import "object/pages/newsDetail";
+@import "object/pages/contact";
+@import "object/pages/contactComplete";
+@import "object/pages/newsList";
 
 //project
-@import "parts/projects/sideBar";
-@import "parts/projects/recommendPostsSideBar";
-@import "parts/projects/hamburgerMenu";
-@import "parts/projects/pagination";
-@import "parts/projects/search";
+@import "object/projects/sideBar";
+@import "object/projects/recommendPostsSideBar";
+@import "object/projects/hamburgerMenu";
+@import "object/projects/pagination";
+@import "object/projects/search";
+@import "object/projects/about";
+@import "object/projects/service";
+@import "object/projects/news";
+@import "object/projects/access";

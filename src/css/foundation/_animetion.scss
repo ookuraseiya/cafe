@@ -1,7 +1,7 @@
 /*hoverした時に下に線が発生するアニメーション*/
 
-@import "../mixin/font";
-@import "../mixin/responsive";
+@import "../object/mixin/font";
+@import "../object/mixin/responsive";
 
 .font__hover {
   position: relative;

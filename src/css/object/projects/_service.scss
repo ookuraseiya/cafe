@@ -1,0 +1,113 @@
+.service {
+  text-align: center;
+  margin-bottom: 10%;
+  @include container();
+  &__header {
+    @include main-color();
+    @include font40();
+    @include responsive(md) {
+      @include font36();
+      @include responsive(sm) {
+        @include font30();
+      }
+    }
+    &--sub {
+      margin-bottom: 3%;
+      @include font14();
+      @include responsive(sm) {
+        margin-bottom: 10%;
+      }
+    }
+  }
+  &__item {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10%;
+    @include responsive(sm) {
+      margin-bottom: 15%;
+    }
+    &::before {
+      content: ".";
+      background: rgb(248, 248, 248);
+      position: absolute;
+      color: #f8f8f8;
+      top: 12%;
+      right: 0;
+      width: 70%;
+      height: 100%;
+      z-index: -10;
+    }
+    // 反対バージョン
+    &--2 {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      position: relative;
+      margin-bottom: 10%;
+      @include responsive(sm) {
+        margin-bottom: 15%;
+      }
+      &::before {
+        content: ".";
+        background: rgb(248, 248, 248);
+        position: absolute;
+        color: #f8f8f8;
+        top: 12%;
+        left: 0;
+        width: 70%;
+        height: 100%;
+        z-index: -10;
+      }
+    }
+  }
+  &__image {
+    width: 55%;
+    @include responsive(sm) {
+      transform: translateY(-6%);
+    }
+  }
+  &__list {
+    width: 45%;
+    @include responsive(lg) {
+      padding-top: 7%;
+    }
+  }
+  &__title {
+    width: 36%;
+    margin: 0 auto;
+    border-bottom: 1px solid;
+    margin-bottom: 3%;
+    @include main-color();
+    @include font24();
+    @include responsive(sm) {
+      width: 60%;
+      @include font14();
+    }
+  }
+  &__text {
+    margin-bottom: 0.7%;
+    @include font16();
+    @include responsive(sm) {
+      @include font9();
+    }
+  }
+  &__button {
+    width: 33%;
+    margin-top: 3%;
+    @include font20();
+    @include responsive(lg) {
+      width: 45%;
+      @include responsive(md) {
+        width: 45%;
+        padding: 5px 15px;
+        @include font9();
+        @include responsive(sm) {
+          width: 60%;
+          padding: 3px 10px;
+        }
+      }
+    }
+  }
+}

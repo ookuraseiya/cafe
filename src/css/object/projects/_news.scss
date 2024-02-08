@@ -1,0 +1,93 @@
+.news {
+  width: 55%;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 10%;
+  @include responsive(lg) {
+    width: 75%;
+  }
+  &__title {
+    width: 35%;
+    text-align: center;
+    margin-top: 12%;
+    color: #a48c61;
+    @include font40();
+    margin: 0;
+    @include responsive(sm) {
+      @include font30();
+    }
+    &--sub {
+      text-align: center;
+      width: 35%;
+      @include font14();
+    }
+  }
+  &__item {
+    margin-top: 10%;
+    border-bottom: 2px solid #e8e8e8;
+    width: 100%;
+    position: relative;
+    display: block;
+    &--day {
+      color: #000;
+      @include font14();
+    }
+    &--title {
+      color: #a48c61;
+      @include font20();
+      @include responsive(lg) {
+        @include font16();
+        @include responsive(sm) {
+          @include font12();
+        }
+      }
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      background-color: #a48c61;
+      width: 0;
+      height: 1px;
+      bottom: -2px;
+      left: 0;
+      -webkit-transition: 0.4s ease 0s;
+      transition: 0.4s ease 0s;
+    }
+    &:hover {
+      text-decoration: none;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+  &__list {
+    @include margin-bottom();
+  }
+  &__button {
+    text-align: -webkit-center;
+    margin-top: 8%;
+    &--layout {
+      display: block;
+      width: 30%;
+      @include font26();
+      @include responsive(xxxl) {
+        width: 40%;
+        @include responsive(xxl) {
+          width: 70%;
+          @include responsive(lg) {
+            width: 80%;
+            @include font20();
+            @include responsive(md) {
+              width: 45%;
+              @include responsive(sm) {
+                width: 80%;
+                margin: 0 auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
