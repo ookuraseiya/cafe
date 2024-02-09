@@ -5,6 +5,7 @@
   position: relative;
   @include responsive(sm) {
     width: 100%;
+    margin-bottom: 10%;
   }
   &__title {
     width: 100%;
@@ -20,6 +21,15 @@
       text-align: center;
       @include margin-bottom();
       @include font16();
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0px 8%;
+    @include responsive(sm) {
+      display: block;
     }
   }
 

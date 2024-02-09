@@ -1,8 +1,3 @@
-/*hoverした時に下に線が発生するアニメーション*/
-
-@import "../object/mixin/font";
-@import "../object/mixin/responsive";
-
 .font__hover {
   position: relative;
   display: inline-block;
@@ -32,7 +27,7 @@
     font-size: 3.5em;
     margin: 0;
     color: #a48c61;
-    animation: fluffy1 3s ease infinite;
+    animation: fluffy 3s ease infinite;
     @include responsive(lg) {
       @include font30();
       @include responsive(md) {
@@ -47,7 +42,7 @@
       font-size: 28px;
       margin: 0;
       color: #a48c61;
-      animation: fluffy1 3s ease infinite;
+      animation: fluffy 3s ease infinite;
     }
   }
   //////////////////////////////////
@@ -118,7 +113,7 @@
   // sliderのアニメーションのcss
 }
 
-@keyframes fluffy1 {
+@keyframes fluffy {
   0% {
     transform: translateY(0);
   }
@@ -161,114 +156,4 @@
   100% {
     opacity: 0;
   }
-}
-
-// catchのアニメーション
-
-.catch-item {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  &:hover {
-    -webkit-transform: translateY(-5px);
-    -ms-transform: translateY(-5px);
-    transform: translateY(-5px);
-  }
-}
-
-// buttonのアニメーション
-
-.button {
-  /*矢印の基点とするためrelativeを指定*/
-  position: relative;
-  /*ボタンの形状*/
-  border: 1px solid #555;
-  padding: 8px 30px;
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  color: #333;
-  outline: none;
-  /*アニメーションの指定*/
-  transition: all 0.2s linear;
-  &:hover {
-    background: #a48c61;
-    color: #fff;
-  }
-  &::before {
-    content: "";
-    /*絶対配置で下線の位置を決める*/
-    position: absolute;
-    top: 50%;
-    right: -26px;
-    /*下線の形状*/
-    width: 40px;
-    height: 1px;
-    background: #a48c61;
-    /*アニメーションの指定*/
-    transition: all 0.2s linear;
-    @include responsive(sm) {
-      right: -20px;
-      width: 30px;
-    }
-  }
-  &::after {
-    content: "";
-    /*絶対配置で矢印の位置を決める*/
-    position: absolute;
-    top: 20%;
-    right: -21px;
-    /*矢印の形状*/
-    width: 1px;
-    height: 12px;
-    background: #a48c61;
-    transform: skewX(45deg);
-    /*アニメーションの指定*/
-    transition: all 0.2s linear;
-    @include responsive(sm) {
-      top: 11%;
-      right: -16px;
-      height: 10px;
-    }
-  }
-  &:hover::before {
-    right: -30px;
-  }
-  &:hover::after {
-    right: -25px;
-  }
-}
-
-// スクロールしたときにfadeinするアニメーションcss
-
-.main-course-item {
-  transform: translateY(150px);
-  opacity: 0;
-}
-
-.main-course-item-2 {
-  transform: translateY(150px);
-  opacity: 0;
-}
-
-.main-course-item-4 {
-  transform: translateY(150px);
-  opacity: 0;
-}
-
-.main-course-item-1 {
-  transition: 1s;
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.main-course-item-3 {
-  transition: 1.5s;
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.main-course-item-5 {
-  transition: 2s;
-  transform: translateY(0);
-  opacity: 1;
 }

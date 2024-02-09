@@ -73,8 +73,8 @@ export const NewsList = () => {
           <section className="newsList">
             <h1 className="newsList__title">NEWS LIST</h1>
             <p className="newsList__title--sub">お知らせ一覧</p>
-            <div className="info__container">
-              <div className="newsList__wrapper">
+            <div className="newsList__wrapper">
+              <div className="newsList__left">
                 {judge(posts, pageNumbers, pageId) ? (
                   posts.slice(FirstPost, LastPost).map((post) => (
                     <Link

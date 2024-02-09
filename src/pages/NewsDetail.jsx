@@ -44,7 +44,7 @@ export const NewsDetail = () => {
             />
             <h1 className="newsDetail__title">NEWS DETAIL</h1>
             <p className="newsDetail__title--sub">ニュース詳細</p>
-            <section className="info__container">
+            <section className="newsDetail__wrapper">
               <section className="newsDetail">
                 <div className="newsDetail__item">
                   <img

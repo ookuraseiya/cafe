@@ -1,5 +1,13 @@
 @charset "utf-8";
 
+// utilityからのincludeを使えるようにしている
+@import "./object/utility/container";
+@import "./object/utility/font";
+@import "./object/utility/image";
+@import "./object/utility/margin";
+@import "./object/utility/padding";
+@import "./object/utility/responsive";
+
 //foundation
 @import "foundation/loading";
 @import "foundation/base";
@@ -13,24 +21,15 @@
 @import "layout/richEditor";
 
 // componets
-// @import "object/componets/about";
+@import "object/componets/button";
 
-//mixin
-@import "object/mixin/container";
-@import "object/mixin/font";
-@import "object/mixin/image";
-@import "object/mixin/margin";
-@import "object/mixin/padding";
-@import "object/mixin/responsive";
-
-//pages
-@import "object/pages/concept";
-@import "object/pages/menu";
-@import "object/pages/event";
-@import "object/pages/newsDetail";
-@import "object/pages/contact";
-@import "object/pages/contactComplete";
-@import "object/pages/newsList";
+// utility
+@import "object/utility/container";
+@import "object/utility/font";
+@import "object/utility/image";
+@import "object/utility/margin";
+@import "object/utility/padding";
+@import "object/utility/responsive";
 
 //project
 @import "object/projects/sideBar";
@@ -42,3 +41,10 @@
 @import "object/projects/service";
 @import "object/projects/news";
 @import "object/projects/access";
+@import "object/projects/concept";
+@import "object/projects/menu";
+@import "object/projects/event";
+@import "object/projects/newsDetail";
+@import "object/projects/contact";
+@import "object/projects/contactComplete";
+@import "object/projects/newsList";

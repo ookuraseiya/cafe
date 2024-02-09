@@ -21,6 +21,15 @@
   }
 
   &__wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0px 8%;
+    @include responsive(sm) {
+      display: block;
+    }
+  }
+
+  &__left {
     width: 40%;
     @include responsive(xxl) {
       width: 50%;

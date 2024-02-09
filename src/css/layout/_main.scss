@@ -1,5 +1,3 @@
-@import "../object/mixin/image";
-
 .main {
   @include margin-bottom();
   @include responsive(md) {
