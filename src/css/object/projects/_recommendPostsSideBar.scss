@@ -1,10 +1,10 @@
 .recommendPostsSideBar {
   width: 100%;
-  height: auto;
+  height: 100%;
   border: 1px solid;
   border-radius: 20px;
   background-color: #fff;
-  padding: 6% 3%;
+  padding: 5%;
   margin-top: 10%;
   @include responsive(xl) {
     padding: 8%;
@@ -47,7 +47,7 @@
       }
     }
     &:before {
-      content: "";
+      content: '';
       position: absolute;
       display: block;
       background-color: #a48c61;
