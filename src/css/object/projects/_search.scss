@@ -10,23 +10,6 @@
   @include margin-bottom();
   @include responsive(xxxxl) {
     padding: 8%;
-    // height: 550px;
-    // @include responsive(xl) {
-    //   padding: 8%;
-    //   height: 500px;
-    //   @include responsive(lg) {
-    //     height: 450px;
-    //     @include responsive(md) {
-    //       height: 470px;
-    //       @include responsive(sm) {
-    //         height: 500px;
-    //         @include responsive(xs) {
-    //           height: 470px;
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
   }
 
   &__form {
