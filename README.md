@@ -16,6 +16,12 @@ https://seiya-cafe-site.netlify.app/
 
 <br>
 
+また詳しくは以下のポートフォリオサイトをご覧ください。
+
+[seiya-portfolio-site.netlify.app](https://seiya-portfolio-site.netlify.app)
+
+<br>
+
 # 開発環境
 
 言語
